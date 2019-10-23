@@ -1,0 +1,142 @@
+header   BR_AUMENTE_PENIS_SUBJ  Subject =~ /aument[ae]\s+(?:seu){0,1}\s*p(?:e|ê|Ê|&ecirc\;)nis/i
+describe BR_AUMENTE_PENIS_SUBJ  Fala sobre aumento de penis
+score    BR_AUMENTE_PENIS_SUBJ  20
+
+header   BR_PERDER_PESO_SUBJ    Subject =~ /\b(?:precisa|quer){0,1}\s*(?:perder|perca)\s+peso\s*(?:j(?:a|á|Á|\&aacute\;)+){0,1}\s*[\!\?]/i
+describe BR_PERDER_PESO_SUBJ    Perder peso
+score    BR_PERDER_PESO_SUBJ    20
+
+
+header   BR_FROM_EXCLAMACAO     From =~ /\!/
+describe BR_FROM_EXCLAMACAO     Exclamacao no endereco
+score    BR_FROM_EXCLAMACAO     20
+
+header   BR_SUBJ_KEYS           Subject =~ /\b(?:kits*|confira|ganhe|hospedagem|compre|divulgue|gr.{1,3}tis|gratu.{1,3}ta)\b/i
+describe BR_SUBJ_KEYS           Ganhe dinheiro
+score    BR_SUBJ_KEYS           20
+
+header   BR_CURSO_ONLINE        Subject =~ /\bcurs[o0]s?\s+[o0]n\-*l[i1]ne\b/i
+describe BR_CURSO_ONLINE        Curso online
+score    BR_CURSO_ONLINE        20
+
+header   BR_RECEIVED_SPAMMER    Received =~ /\.(?:dsl|dial\-*up|user|sao)\.(?:ajato|veloxzone|telesp|brasiltelecom)\.(?:net|com)\.br/i
+describe BR_RECEIVED_SPAMMER    Spam
+score    BR_RECEIVED_SPAMMER    2.0
+
+header   BR_GANHE_DINHEIRO      Subject =~ /\bganhe\s+dinheiro\b/i
+describe BR_GANHE_DINHEIRO      Ganhe dinheiro
+score    BR_GANHE_DINHEIRO      20
+
+header   BR_RENDA_EXTRA_SUBJ    Subject =~ /\baument(e|ar|ou|ando)\s+(?:a\s+sua|sua|o\s+seu|o|a){0,1}\s+(?:renda|ganho)|(?:renda|ganho|dinheiro)[\s\-]+extra\b/i
+describe BR_RENDA_EXTRA_SUBJ    Renda extra
+score    BR_RENDA_EXTRA_SUBJ    20
+
+header   BR_FROM_KEYS           From =~ /(?:cadastro|promo.{2}o|\w{4}\_\w{4}\_._._.|oportunidade|livre\-se|divulgue|respond|remov|melhor)/i
+describe BR_FROM_KEYS           Cadastro promocao
+score    BR_FROM_KEYS           5
+
+header   BR_VIDEO_PORNO_SUBJ    Subject =~ /\bv(?:.{1,2}|\&iacute\;|1)deos+\s+porn(?:o|ô|Ô|\&ocirc\;)/i
+describe BR_VIDEO_PORNO_SUBJ    Video porno
+score    BR_VIDEO_PORNO_SUBJ    20
+
+header   BR_VAGAS_ABERTAS_SUBJ  Subject =~ /vagas+\s+abertas+/i
+describe BR_VAGAS_ABERTAS_SUBJ  Vagas abertas
+score    BR_VAGAS_ABERTAS_SUBJ  20
+
+header   BR_PESO_KG             Subject =~ /\b[\d\.\,]+\s*(?:kg|kilos|lb)\b/i
+describe BR_PESO_KG             Perder peso
+score    BR_PESO_KG             20
+
+header   BR_AMIL_SUBJ   Subject =~ /(?:(a|A)\s){0,1}((M|m)aior|(M|m)elhor)\soperadora(?:\sdo\sp(a|á)is){0,1}(?:\.){0,1}/
+describe BR_AMIL_SUBJ    Email vindo da amil
+score    BR_AMIL_SUBJ    20
+
+header   BR_AMIL_SUBJ   Subject =~ /*ganhou*/i
+describe BR_AMIL_SUBJ    Ganhou
+score    BR_AMIL_SUBJ    5
+
+header   BR_CNPJ_SUBJ   Subject =~ /(?:(v|V)oc(ê|e)\s){0,1}((P|p)ossui|(p|P)ossuem)\s(C|c)(n|N)(p|P)(j|J)(?:\s){0,1}\?/
+describe BR_CNPJ_SUBJ    CNPJ
+score    BR_CNPJ_SUBJ    20
+
+header   BR_SAUDE_SUBJ   Subject =~ /.*sa(ú|u)de.*/i
+describe BR_SAUDE_SUBJ    Saude
+score    BR_SAUDE_SUBJ    5
+
+
+
+###########################################
+############### BODY RULES ###############
+###########################################
+
+body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
+describe BR_DIVULGUE_SUA        Divulgue seu
+score    BR_DIVULGUE_SUA        20
+
+body     BR_AUMENTE_PENIS       /aument[ae]\s+(?:seu){0,1}\s*p(?:e|ê|Ê|&ecirc\;)nis/i
+describe BR_AUMENTE_PENIS       Aumentar penis
+score    BR_AUMENTE_PENIS       20
+
+body     BR_PERDER_TEMPO        /perca\s+(?:mais){0,1}\s*tempo/i
+describe BR_PERDER_TEMPO        Perder tempo
+score    BR_PERDER_TEMPO        20
+
+body     BR_24_HORAS            /\b24\s*(?:horas|h|hr|hrs)\b/i
+describe BR_24_HORAS            24 horas
+score    BR_24_HORAS            2.0
+
+body     BR_SUA_EMPRESA         /\b(?:de|para)\s+sua\s+empresa\b/i
+describe BR_SUA_EMPRESA         Sua empresa
+score    BR_SUA_EMPRESA         10
+
+body     BR_TRABALHAR_CASA      /trabalh(?:ar|e)\s+(?:de|em)\s+casa\b/i
+describe BR_TRABALHAR_CASA      Trabalhar em casa
+score    BR_TRABALHAR_CASA      20
+
+body     BR_APROVEITE           /\baproveitem?\s+(?:nossa|es[st]a)\s+promo/i
+describe BR_APROVEITE           Spam de Aproveite
+score    BR_APROVEITE           20
+
+body     BR_RENDA_EXTRA_BODY    /\baument(e|ar|ou|ando)\s+(?:a\s+sua|sua|o\s+seu|o|a){0,1}\s+(?:renda|ganho)|(?:renda|ganho|dinheiro)[\s\-]+extra\b/i
+describe BR_RENDA_EXTRA_BODY    Renda extra
+score    BR_RENDA_EXTRA_BODY    20
+
+body     BR_A_PARTIR_DE         /\ba\s*partir\s+de\s+[a-z]{0,3}\$\s*[\d\.\,]+/i
+describe BR_A_PARTIR_DE         A partir de
+score    BR_A_PARTIR_DE         20
+
+body     BR_AGENCIA_DE_XXXX     /\bAg(?:..|e|ê|Ê|\&ecirc\;)ncia\s+de\s+(?:aproxima|modelo)/i
+describe BR_AGENCIA_DE_XXXX     Agenda acompanhantes
+score    BR_AGENCIA_DE_XXXX     20
+
+body     BR_E_CONFIRA           /\be\s+confira/i
+describe BR_E_CONFIRA           Confira
+score    BR_E_CONFIRA           5.0
+
+body     BR_GANHE_ENVIANDO      /ganhe dinheiro.{0,20}enviando e\-*mail/i
+describe BR_GANHE_ENVIANDO      Ganhe dinheiro enviando
+score    BR_GANHE_ENVIANDO      20
+
+body     BR_INCLUIR_PIRAMIDE    /meu nome.{0,10}inclu.{1,3}do.{0,15}sua lista de correspond.{1,3}ncia/i
+describe BR_INCLUIR_PIRAMIDE    Piramide
+score    BR_INCLUIR_PIRAMIDE    5.0
+
+body     BR_TRABALHE_EM_CASA    /trabalhe (?:a partir )?(?:de|em) casa/i
+describe BR_TRABALHE_EM_CASA    Trabalhe em casa
+score    BR_TRABALHE_EM_CASA    20
+
+body     BR_ENVIOU_1REAL        /(?:mand|envi)(?:e|ou|aram|ar.{1,3}o)\s+(?:imediatamente\s*)?r\$\s*1[\,\.]00\b/i
+describe BR_ENVIOU_1REAL        Enviou real
+score    BR_ENVIOU_1REAL        20
+
+body     BR_TENHA_SEU_SITE      /tenha seu site na internet/i
+describe BR_TENHA_SEU_SITE      Tenha seu site
+score    BR_TENHA_SEU_SITE      20
+
+rawbody  BR_MALADIRETA          /mala.{0,5}direta/i
+describe BR_MALADIRETA          Mala direta
+score    BR_MALADIRETA          20
+
+rawbody  BR_MALADIRETA2         /mala.{0,5}direta\s+de\s+e\-*mail\'*s*/i
+describe BR_MALADIRETA2         Mala direta 2
+score    BR_MALADIRETA2         20
