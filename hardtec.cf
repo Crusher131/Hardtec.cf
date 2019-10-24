@@ -11,7 +11,7 @@ header   BR_FROM_EXCLAMACAO     From =~ /\!/
 describe BR_FROM_EXCLAMACAO     Exclamacao no endereco
 score    BR_FROM_EXCLAMACAO     20
 
-header   BR_SUBJ_KEYS           Subject =~ /\b(?:kits*|confira|ganhe|hospedagem|compre|divulgue|gr.{1,3}tis|gratu.{1,3}ta)\b/i
+header   BR_SUBJ_KEYS           Subject =~ /\b(?:kits*|confira|ganhe|hospedagem|compre|divulgue|gratu.{1,3}ta)\b/i
 describe BR_SUBJ_KEYS           Ganhe dinheiro
 score    BR_SUBJ_KEYS           20
 
@@ -121,7 +121,7 @@ score   BR_PISHING_SUBJ    30
 
 header  BR_GRATIS_SUBJ    Subject =~ /.*(frete\s)?gr(a|á)tis.*/i
 describe    BR_GRATIS_SUBJ    gratis
-score   BR_GRATIS_SUBJ    5
+score   BR_GRATIS_SUBJ    11
 
 header  BR_DESCONTO_SUBJ    Subject =~ /.*desconto.*/i
 describe    BR_DESCONTO_SUBJ    desconto
@@ -139,7 +139,7 @@ header  BR_IMPERDIVEL_SUBJ    Subject =~ /.*imperd[ií]vel.*/i
 describe    BR_IMPERDIVEL_SUBJ    imperdivel
 score   BR_IMPERDIVEL_SUBJ 6
 
-header  BR_PRECO_VALOR_SUBJ    Subject =~ /.*(pre(ç|c)os|valores).*/i
+header  BR_PRECO_VALOR_SUBJ    Subject =~ /.*(pre(ç|c)os?|valor(es)?).*/i
 describe    BR_PRECO_VALOR_SUBJ    preco/valor
 score   BR_PRECO_VALOR_SUBJ 3
 
