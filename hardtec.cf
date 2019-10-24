@@ -99,7 +99,7 @@ header  BR_PERCA_TEMPO_SUBJ    Subject =~ /.*n(ã|a)o\sperca\stempo.*/i
 describe    BR_PERCA_TEMPO_SUBJ    perca tempo
 score   BR_PERCA_TEMPO_SUBJ    3
 
-header  BR_VQ_HORAS_SUBJ    Subject =~ /.*(24|vinte\s(?:e\s){0,1}quatro\s)hora(?:s){0,1}.*/i
+header  BR_VQ_HORAS_SUBJ    Subject =~ /.*(24|vinte\s(e\s)?quatro\s)horas?.*/i
 describe    BR_VQ_HORAS_SUBJ    24 horas
 score   BR_VQ_HORAS_SUBJ    3
 
@@ -115,6 +115,10 @@ header  BR_ATE_AMANHA_SUBJ    Subject =~ /.*s(ó|o)\sat(e|é)\samanh(a|ã).*/i
 describe    BR_ATE_AMANHA_SUBJ    só até amanha
 score   BR_ATE_AMANHA_SUBJ    4
 
+header  BR_PISHING_SUBJ    Subject =~ /.*alerta\sde\sseguran.{1}a\.\ssua\sconta\sfoi\scomprometida\..*/i
+describe    BR_PISHING_SUBJ    pishing
+score   BR_PISHING_SUBJ    8
+
 ###########################################
 ############### BODY RULES ###############
 ###########################################
@@ -126,10 +130,6 @@ score    BR_DIVULGUE_SUA        20
 body     BR_AUMENTE_PENIS       /aument[ae]\s+(?:seu){0,1}\s*p(?:e|ê|Ê|&ecirc\;)nis/i
 describe BR_AUMENTE_PENIS       Aumentar penis
 score    BR_AUMENTE_PENIS       20
-
-body     BR_PERDER_TEMPO        /perca\s+(?:mais){0,1}\s*tempo/i
-describe BR_PERDER_TEMPO        Perder tempo
-score    BR_PERDER_TEMPO        20
 
 body     BR_24_HORAS            /\b24\s*(?:horas|h|hr|hrs)\b/i
 describe BR_24_HORAS            24 horas
