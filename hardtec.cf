@@ -63,7 +63,57 @@ header   BR_SAUDE_SUBJ   Subject =~ /.*sa(ú|u)de.*/i
 describe BR_SAUDE_SUBJ    Saude
 score    BR_SAUDE_SUBJ    5
 
+header BR_EMPRESTIMO_SUBJ   Subject =~ /.*empr(e|é)stimo.*/i
+describe    BR_EMPRESTIMO_SUBJ  Emprestimo
+score   BR_EMPRESTIMO_SUBJ  5
 
+header  BR_VOCE_SUBJ    Subject =~ /.*voc(e|ê).*/i
+describe    BR_VOCE_SUBJ    Voce
+score   BR_VOCE_SUBJ    2
+
+header  BR_PEDIDO_SUBJ    Subject =~ /.*pedido.*/i
+describe    BR_PEDIDO_SUBJ    Pedido
+score   BR_PEDIDO_SUBJ    2
+
+header  BR_APROVADO_SUBJ    Subject =~ /.*aprovado.*/i
+describe    BR_APROVADO_SUBJ    aprovado
+score   BR_APROVADO_SUBJ    2
+
+header  BR_AGORA_JA_SUBJ    Subject =~ /.*(agora|j(á|a)).*/i
+describe    BR_AGORA_JA_SUBJ    agora|já
+score   BR_AGORA_JA_SUBJ    3
+
+header  BR_ULT_CHANCE_SUBJ    Subject =~ /.*(ú|u)ltima\schance.*/i
+describe    BR_ULT_CHANCE_SUBJ    ultima chance
+score   BR_ULT_CHANCE_SUBJ    3
+
+header  BR_HOJE_SUBJ    Subject =~ /.*hoje.*/i
+describe    BR_HOJE_SUBJ    hoje
+score   BR_HOJE_SUBJ    1
+
+header  BR_TMP_LIMITADO_SUBJ    Subject =~ /.*tempo\slimitado.*/i
+describe    BR_TMP_LIMITADO_SUBJ    tempo limitado
+score   BR_TMP_LIMITADO_SUBJ    3
+
+header  BR_PERCA_TEMPO_SUBJ    Subject =~ /.*n(ã|a)o\sperca\stempo.*/i
+describe    BR_PERCA_TEMPO_SUBJ    perca tempo
+score   BR_PERCA_TEMPO_SUBJ    3
+
+header  BR_VQ_HORAS_SUBJ    Subject =~ /.*(24|vinte\s(?:e\s){0,1}quatro\s)hora(?:s){0,1}.*/i
+describe    BR_VQ_HORAS_SUBJ    24 horas
+score   BR_VQ_HORAS_SUBJ    3
+
+header  BR_URGENTE_SUBJ    Subject =~ /.*urgente.*/i
+describe    BR_URGENTE_SUBJ    urgente
+score   BR_URGENTE_SUBJ    2
+
+header  BR_IMEDIATO_SUBJ    Subject =~ /.*imediato.*/i
+describe    BR_IMEDIATO_SUBJ    imediato
+score   BR_IMEDIATO_SUBJ    2
+
+header  BR_ATE_AMANHA_SUBJ    Subject =~ /.*s(ó|o)\sat(e|é)\samanh(a|ã).*/i
+describe    BR_ATE_AMANHA_SUBJ    só até amanha
+score   BR_ATE_AMANHA_SUBJ    4
 
 ###########################################
 ############### BODY RULES ###############
