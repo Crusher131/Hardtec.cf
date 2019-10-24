@@ -115,9 +115,41 @@ header  BR_ATE_AMANHA_SUBJ    Subject =~ /.*s(ó|o)\sat(e|é)\samanh(a|ã).*/i
 describe    BR_ATE_AMANHA_SUBJ    só até amanha
 score   BR_ATE_AMANHA_SUBJ    4
 
-header  BR_PISHING_SUBJ    Subject =~ /.*alerta\sde\sseguran.{1}a\.\ssua\sconta\sfoi\scomprometida\..*/i
+header  BR_PISHING_SUBJ    Subject =~ /.*alerta\sde\sseguran.*a\.\ssua\sconta\sfoi\scomprometida\.?.*/i
 describe    BR_PISHING_SUBJ    pishing
-score   BR_PISHING_SUBJ    8
+score   BR_PISHING_SUBJ    30
+
+header  BR_GRATIS_SUBJ    Subject =~ /.*(frete\s)?gr(a|á)tis.*/i
+describe    BR_GRATIS_SUBJ    gratis
+score   BR_GRATIS_SUBJ    5
+
+header  BR_DESCONTO_SUBJ    Subject =~ /.*desconto.*/i
+describe    BR_DESCONTO_SUBJ    desconto
+score   BR_DESCONTO_SUBJ 3
+
+header  BR_PROMOCAO_SUBJ    Subject =~ /.*promo[cç][aã]o.*/i
+describe    BR_PROMOCAO_SUBJ    promoção
+score   BR_PROMOCAO_SUBJ 6
+
+header  BR_OFERTA_SUBJ    Subject =~ /.*oferta.*/i
+describe    BR_OFERTA_SUBJ    oferta
+score   BR_OFERTA_SUBJ 3
+
+header  BR_IMPERDIVEL_SUBJ    Subject =~ /.*imperd[ií]vel.*/i
+describe    BR_IMPERDIVEL_SUBJ    imperdivel
+score   BR_IMPERDIVEL_SUBJ 6
+
+header  BR_PRECO_VALOR_SUBJ    Subject =~ /.*(pre(ç|c)os|valores).*/i
+describe    BR_PRECO_VALOR_SUBJ    preco/valor
+score   BR_PRECO_VALOR_SUBJ 3
+
+header  BR_DESPACHAMOS_SUBJ    Subject =~ /Despachamos\spara\stodo\so\sBrasil\.?/i
+describe    BR_DESPACHAMOS_SUBJ    despachamos
+score   BR_DESPACHAMOS_SUBJ 10
+
+header  BR_CLIQUE_SUBJ    Subject =~ /.*clique.*/i
+describe    BR_CLIQUE_SUBJ    clique
+score   BR_CLIQUE_SUBJ 7
 
 ###########################################
 ############### BODY RULES ###############
