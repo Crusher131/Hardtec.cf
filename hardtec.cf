@@ -151,6 +151,18 @@ header  BR_CLIQUE_SUBJ    Subject =~ /.*clique.*/i
 describe    BR_CLIQUE_SUBJ    clique
 score   BR_CLIQUE_SUBJ 7
 
+header  BR_ASSINE_SUBJ    Subject =~ /.*assine.*/i
+describe    BR_ASSINE_SUBJ    assine
+score   BR_ASSINE_SUBJ 5
+
+header  BR_VISITE_SITE_SUBJ    Subject =~ /visite\so\ssite/i
+describe    BR_VISITE_SITE_SUBJ    visite o site
+score   BR_VISITE_SITE_SUBJ 12
+
+header  BR_INFO_SUBJ    Subject =~ /(saiba\smais.*|voc[eê]\squer.*)/i
+describe    BR_INFO_SUBJ    saiba mais|voce quer
+score   BR_INFO_SUBJ 12
+
 ###########################################
 ############### BODY RULES ###############
 ###########################################
