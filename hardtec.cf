@@ -163,6 +163,82 @@ header  BR_INFO_SUBJ    Subject =~ /(saiba\smais.*|voc[eê]\squer.*)/i
 describe    BR_INFO_SUBJ    saiba mais|voce quer
 score   BR_INFO_SUBJ 12
 
+header  BR_OLHE_SUBJ    Subject =~ /(.*d[ea]\suma\solhada.*|.*olh[ae]\sisso.*)/i
+describe    BR_OLHE_SUBJ    de uma olhada
+score   BR_OLHE_SUBJ 8
+
+header  BR_VENDA_SUBJ    Subject =~ /(.*vendas?.*)/i
+describe    BR_VENDA_SUBJ    vendas
+score   BR_VENDA_SUBJ 5
+
+header  BR_AMADORES_SUBJ    Subject =~ /(.*amador(es)?.*)/i
+describe    BR_AMADORES_SUBJ    vendas
+score   BR_AMADORES_SUBJ 8
+
+header  BR_VENDAS_AMADORES_SUBJ    Subject =~ /(.*vendas?\sn[ãa]o\s[eé]\spara\samadores.*)/i
+describe    BR_VENDAS_AMADORES_SUBJ    vendas
+score   BR_VENDAS_AMADORES_SUBJ 17
+
+header  BR_VENDAS_AMADORES_SUBJ    Subject =~ /(.*vendas?\sn[ãa]o\s[eé]\spara\samadores.*)/i
+describe    BR_VENDAS_AMADORES_SUBJ    vendas
+score   BR_VENDAS_AMADORES_SUBJ 17
+
+header  BR_LEIA_AGORA1_SUBJ    Subject =~ /.*leia.*agora.*/i
+describe    BR_LEIA_AGORA1_SUBJ    leia agora1
+score   BR_LEIA_AGORA1_SUBJ 8
+
+header  BR_LEIA_AGORA2_SUBJ    Subject =~ /leia\sagora!?/i
+describe    BR_LEIA_AGORA2_SUBJ    leia agora2
+score   BR_LEIA_AGORA2_SUBJ 15
+
+header  BR_NAO_EXCLUA_SUBJ    Subject =~ /.*n[aã]o\sexclua.*/i
+describe    BR_NAO_EXCLUA_SUBJ    não exclua
+score   BR_NAO_EXCLUA_SUBJ 15
+
+header  BR_VEJA_ISSO1_SUBJ    Subject =~ /.*(veja\sisso|veja.*todo|voc[eê]\s.*\sviu|veja\s(a|as|o|os)).*/i
+describe    BR_VEJA_ISSO1_SUBJ    veja isso1
+score   BR_VEJA_ISSO1_SUBJ 8
+
+header  BR_VEJA_ISSO2_SUBJ    Subject =~ /.*voc[eê]\sprecisa\sver\sisso.*/i
+describe    BR_VEJA_ISSO2_SUBJ    veja isso2
+score   BR_VEJA_ISSO2_SUBJ 15
+
+header  BR_CONFIRA1_SUBJ    Subject =~ /confira\!?/i
+describe    BR_CONFIRA1_SUBJ    confira1
+score   BR_CONFIRA1_SUBJ 17
+
+header  BR_CONFIRA2_SUBJ    Subject =~ /confira.*/i
+describe    BR_CONFIRA2_SUBJ    confira1
+score   BR_CONFIRA2_SUBJ 5
+
+header  BR_ABRA1_SUBJ    Subject =~ /abra\!?/i
+describe    BR_ABRA1_SUBJ    abra1
+score   BR_ABRA1_SUBJ 17
+
+header  BR_ABRA1_SUBJ    Subject =~ /.*abra.*/i
+describe    BR_ABRA1_SUBJ    abra1
+score   BR_ABRA1_SUBJ 5
+
+header  BR_HORIZONTES_SUBJ    Subject =~ /.*horizontes?.*/i
+describe    BR_HORIZONTES_SUBJ    horizontes1
+score   BR_HORIZONTES_SUBJ 5
+
+header  BR_NOVO_HORIZONTES_SUBJ    Subject =~ /.*(abr[ae]\s(nov[oa]s?)horizontes?|novos\shorizontes).*/i
+describe    BR_NOVO_HORIZONTES_SUBJ    horizontes2
+score   BR_NOVO_HORIZONTES_SUBJ 20
+
+header  BR_NOVO_HORIZONTES_SUBJ    Subject =~ /.*(abr[ae]\s(nov[oa]s?)horizontes?|novos\shorizontes).*/i
+describe    BR_NOVO_HORIZONTES_SUBJ    horizontes2
+score   BR_NOVO_HORIZONTES_SUBJ 20
+
+header BR_IS_NOT_SPAM_SUBJ  Subject =~ /.*isso\sn[ãa]o\s[ée]\sspam.*/i
+describe BR_IS_NOT_SPAM_SUBJ    não é spam
+score BR_IS_NOT_SPAM_SUBJ   20
+
+header BR_ATENCAO_SUBJ  Subject =~ /.*aten[çcšs][ãa]o.*/i
+describe BR_ATENCAO_SUBJ    atenção
+score BR_ATENCAO_SUBJ   5
+
 ###########################################
 ############### BODY RULES ###############
 ###########################################
