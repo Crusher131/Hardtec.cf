@@ -51,9 +51,9 @@ header   BR_AMIL_SUBJ   Subject =~ /(?:(a|A)\s){0,1}((M|m)aior|(M|m)elhor)\soper
 describe BR_AMIL_SUBJ    Email vindo da amil
 score    BR_AMIL_SUBJ    20
 
-header   BR_AMIL_SUBJ   Subject =~ /*ganhou*/i
-describe BR_AMIL_SUBJ    Ganhou
-score    BR_AMIL_SUBJ    5
+header   BR_GANHOU_SUBJ   Subject =~ /*ganhou*/i
+describe BR_GANHOU_SUBJ    Ganhou
+score    BR_GANHOU_SUBJ    5
 
 header   BR_CNPJ_SUBJ   Subject =~ /(?:(v|V)oc(ê|e)\s){0,1}((P|p)ossui|(p|P)ossuem)\s(C|c)(n|N)(p|P)(j|J)(?:\s){0,1}\?/
 describe BR_CNPJ_SUBJ    CNPJ
@@ -179,10 +179,6 @@ header  BR_VENDAS_AMADORES_SUBJ    Subject =~ /(.*vendas?\sn[ãa]o\s[eé]\spara\
 describe    BR_VENDAS_AMADORES_SUBJ    vendas
 score   BR_VENDAS_AMADORES_SUBJ 17
 
-header  BR_VENDAS_AMADORES_SUBJ    Subject =~ /(.*vendas?\sn[ãa]o\s[eé]\spara\samadores.*)/i
-describe    BR_VENDAS_AMADORES_SUBJ    vendas
-score   BR_VENDAS_AMADORES_SUBJ 17
-
 header  BR_LEIA_AGORA1_SUBJ    Subject =~ /.*leia.*agora.*/i
 describe    BR_LEIA_AGORA1_SUBJ    leia agora1
 score   BR_LEIA_AGORA1_SUBJ 8
@@ -215,9 +211,9 @@ header  BR_ABRA1_SUBJ    Subject =~ /abra\!?/i
 describe    BR_ABRA1_SUBJ    abra1
 score   BR_ABRA1_SUBJ 17
 
-header  BR_ABRA1_SUBJ    Subject =~ /.*abra.*/i
-describe    BR_ABRA1_SUBJ    abra1
-score   BR_ABRA1_SUBJ 5
+header  BR_ABRA2_SUBJ    Subject =~ /.*abra.*/i
+describe    BR_ABRA2_SUBJ    abra2
+score   BR_ABRA2_SUBJ 5
 
 header  BR_HORIZONTES_SUBJ    Subject =~ /.*horizontes?.*/i
 describe    BR_HORIZONTES_SUBJ    horizontes1
@@ -227,17 +223,45 @@ header  BR_NOVO_HORIZONTES_SUBJ    Subject =~ /.*(abr[ae]\s(nov[oa]s?)horizontes
 describe    BR_NOVO_HORIZONTES_SUBJ    horizontes2
 score   BR_NOVO_HORIZONTES_SUBJ 20
 
-header  BR_NOVO_HORIZONTES_SUBJ    Subject =~ /.*(abr[ae]\s(nov[oa]s?)horizontes?|novos\shorizontes).*/i
-describe    BR_NOVO_HORIZONTES_SUBJ    horizontes2
-score   BR_NOVO_HORIZONTES_SUBJ 20
-
 header BR_IS_NOT_SPAM_SUBJ  Subject =~ /.*isso\sn[ãa]o\s[ée]\sspam.*/i
 describe BR_IS_NOT_SPAM_SUBJ    não é spam
 score BR_IS_NOT_SPAM_SUBJ   20
 
-header BR_ATENCAO_SUBJ  Subject =~ /.*aten[çcšs][ãa]o.*/i
-describe BR_ATENCAO_SUBJ    atenção
-score BR_ATENCAO_SUBJ   5
+header BR_ATENCAO1_SUBJ  Subject =~ /.*aten[çcšs][ãa]o.*/i
+describe BR_ATENCAO1_SUBJ    atenção
+score BR_ATENCAO1_SUBJ   5
+
+header BR_ATENCAO2_SUBJ  Subject =~ /aten[çcšs][ãa]o!?/i
+describe BR_ATENCAO2_SUBJ    atenção2
+score BR_ATENCAO2_SUBJ   20
+
+header BR_PARA_VOCE_SUBJ  Subject =~ /.*especialmente\spara\svoc[êe].*/i
+describe BR_PARA_VOCE_SUBJ    para voce
+score BR_PARA_VOCE_SUBJ   20
+
+header BR_INFORMACAO_VOCE_SUBJ  Subject =~ /.*a\sinforma[çc][ãa]o\sque\svoc[êe]\spediu.*/i
+describe BR_INFORMACAO_VOCE_SUBJ    informacao que voce pediu
+score BR_INFORMACAO_VOCE_SUBJ   20
+
+header BR_VAGAS_ABERTAS1_SUBJ  Subject =~ /.*vagas\sabertas.*/i
+describe BR_VAGAS_ABERTAS1_SUBJ    vagas abertas1
+score BR_VAGAS_ABERTAS1_SUBJ   7
+
+header BR_VAGAS_ABERTAS2_SUBJ  Subject =~ /vagas\sabertas!?\??/i
+describe BR_VAGAS_ABERTAS2_SUBJ    vagas abertas2
+score BR_VAGAS_ABERTAS2_SUBJ   20
+
+header BR_TELEMARKETING_SUBJ  Subject =~ /.*telemarketing.*/i
+describe BR_TELEMARKETING_SUBJ    telemarketing
+score BR_TELEMARKETING_SUBJ   20
+
+header BR_OPORTUNIDADE_SUBJ  Subject =~ /.*oportunidade.*/i
+describe BR_OPORTUNIDADE_SUBJ    oportunidade
+score BR_OPORTUNIDADE_SUBJ   5
+
+header BR_OPORTUNIDADE_SUBJ  Subject =~ /.*oportunidade.*/i
+describe BR_OPORTUNIDADE_SUBJ    oportunidade
+score BR_OPORTUNIDADE_SUBJ   5
 
 ###########################################
 ############### BODY RULES ###############
@@ -275,7 +299,7 @@ body     BR_A_PARTIR_DE         /\ba\s*partir\s+de\s+[a-z]{0,3}\$\s*[\d\.\,]+/i
 describe BR_A_PARTIR_DE         A partir de
 score    BR_A_PARTIR_DE         20
 
-body     BR_AGENCIA_DE_XXXX     /\bAg(?:..|e|ê|Ê|\&ecirc\;)ncia\s+de\s+(?:aproxima|modelo)/i
+body     BR_AGENCIA_DE_XXXX     /\bAg(?:..|e|ê|Ê|\&ecirc\;)ncia\s+de\s+(?:aproxima|modelos?)/i
 describe BR_AGENCIA_DE_XXXX     Agenda acompanhantes
 score    BR_AGENCIA_DE_XXXX     20
 
