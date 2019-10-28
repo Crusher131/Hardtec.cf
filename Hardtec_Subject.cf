@@ -263,74 +263,10 @@ header BR_OPORTUNIDADE2_SUBJ  Subject =~ /oportunidade!?/i
 describe BR_OPORTUNIDADE2_SUBJ    oportunidade2
 score BR_OPORTUNIDADE2_SUBJ   15
 
-###########################################
-############### BODY RULES ###############
-###########################################
+header BR_RASTREAMENTO_SUBJ Subject =~  /Codigo\sde\sRastreamento\s\-\s.{2}\/.{4}\s-\s.*/
+describe BR_RASTREAMENTO_SUBJ   codigo de rastreamento
+score BR_RASTREAMENTO_SUBJ 20
 
-body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
-describe BR_DIVULGUE_SUA        Divulgue seu
-score    BR_DIVULGUE_SUA        20
-
-body     BR_AUMENTE_PENIS       /aument[ae]\s+(?:seu){0,1}\s*p(?:e|ê|Ê|&ecirc\;)nis/i
-describe BR_AUMENTE_PENIS       Aumentar penis
-score    BR_AUMENTE_PENIS       20
-
-body     BR_24_HORAS            /\b24\s*(?:horas|h|hr|hrs)\b/i
-describe BR_24_HORAS            24 horas
-score    BR_24_HORAS            2.0
-
-body     BR_SUA_EMPRESA         /\b(?:de|para)\s+sua\s+empresa\b/i
-describe BR_SUA_EMPRESA         Sua empresa
-score    BR_SUA_EMPRESA         10
-
-body     BR_TRABALHAR_CASA      /trabalh(?:ar|e)\s+(?:de|em)\s+casa\b/i
-describe BR_TRABALHAR_CASA      Trabalhar em casa
-score    BR_TRABALHAR_CASA      20
-
-body     BR_APROVEITE           /\baproveitem?\s+(?:nossa|es[st]a)\s+promo/i
-describe BR_APROVEITE           Spam de Aproveite
-score    BR_APROVEITE           20
-
-body     BR_RENDA_EXTRA_BODY    /\baument(e|ar|ou|ando)\s+(?:a\s+sua|sua|o\s+seu|o|a){0,1}\s+(?:renda|ganho)|(?:renda|ganho|dinheiro)[\s\-]+extra\b/i
-describe BR_RENDA_EXTRA_BODY    Renda extra
-score    BR_RENDA_EXTRA_BODY    20
-
-body     BR_A_PARTIR_DE         /\ba\s*partir\s+de\s+[a-z]{0,3}\$\s*[\d\.\,]+/i
-describe BR_A_PARTIR_DE         A partir de
-score    BR_A_PARTIR_DE         20
-
-body     BR_AGENCIA_DE_XXXX     /\bAg(?:..|e|ê|Ê|\&ecirc\;)ncia\s+de\s+(?:aproxima|modelos?)/i
-describe BR_AGENCIA_DE_XXXX     Agenda acompanhantes
-score    BR_AGENCIA_DE_XXXX     20
-
-body     BR_E_CONFIRA           /\be\s+confira/i
-describe BR_E_CONFIRA           Confira
-score    BR_E_CONFIRA           5.0
-
-body     BR_GANHE_ENVIANDO      /ganhe dinheiro.{0,20}enviando e\-*mail/i
-describe BR_GANHE_ENVIANDO      Ganhe dinheiro enviando
-score    BR_GANHE_ENVIANDO      20
-
-body     BR_INCLUIR_PIRAMIDE    /meu nome.{0,10}inclu.{1,3}do.{0,15}sua lista de correspond.{1,3}ncia/i
-describe BR_INCLUIR_PIRAMIDE    Piramide
-score    BR_INCLUIR_PIRAMIDE    5.0
-
-body     BR_TRABALHE_EM_CASA    /trabalhe (?:a partir )?(?:de|em) casa/i
-describe BR_TRABALHE_EM_CASA    Trabalhe em casa
-score    BR_TRABALHE_EM_CASA    20
-
-body     BR_ENVIOU_1REAL        /(?:mand|envi)(?:e|ou|aram|ar.{1,3}o)\s+(?:imediatamente\s*)?r\$\s*1[\,\.]00\b/i
-describe BR_ENVIOU_1REAL        Enviou real
-score    BR_ENVIOU_1REAL        20
-
-body     BR_TENHA_SEU_SITE      /tenha seu site na internet/i
-describe BR_TENHA_SEU_SITE      Tenha seu site
-score    BR_TENHA_SEU_SITE      20
-
-rawbody  BR_MALADIRETA          /mala.{0,5}direta/i
-describe BR_MALADIRETA          Mala direta
-score    BR_MALADIRETA          20
-
-rawbody  BR_MALADIRETA2         /mala.{0,5}direta\s+de\s+e\-*mail\'*s*/i
-describe BR_MALADIRETA2         Mala direta 2
-score    BR_MALADIRETA2         20
+header BR_PEDIDO2_SUBJ Subject =~  /Seu\spedido\s\(\s.{7}\s\)\sesta\sa\scaminho\s?!?/
+describe BR_PEDIDO2_SUBJ   pedido a caminho
+score BR_PEDIDO2_SUBJ 20
