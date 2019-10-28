@@ -1,9 +1,11 @@
-comp_value=$?
 outlog="/var/log/spamrule.log"
-spamfile="/etc/mail/spamassassin/hardtec.cf"
+subjectfile="/etc/mail/spamassassin/HardtecSubject.cf"
+bodyfile="/etc/mail/spamassassin/HardtecBody.cf"
 service=MailScanner
-spamdfile="/tmp/hardtec.cf"
-git="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/hardtec.cf"
+subjectfiled="/tmp/HardtecSubject.cf"
+bodyfiled="/tmp/HardtecBody.cf"
+git="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
+git2="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
 
 
 reinit.mail.func(){
@@ -17,25 +19,42 @@ fi
 
 comparate.func(){
     echo "Verificando arquivo baixado e arquivo atual">>$outlog
-    diff --brief $spamdfile $spamfile >/dev/null
+    diff --brief $subjectfiled $subjectfile >/dev/null
+comp_value=$?
 if [ $comp_value -eq 1 ]
     then
-        echo "Arquivos diferentes!">>$outlog
-        echo "Subistituindo arquivo atual pelo baixado">>$outlog
-            cp -f $spamdfile $spamfile 2>&1 |tee -a $outlog
-        echo "Reiniciando MailScanner">>$outlog
-            reinit.mail.func 2>&1 |tee -a $outlog
-        echo "Removendo arquivo Baixado">>$outlog
-            rm $spamdfile 2>&1 |tee -a $outlog
-        echo "FIM!">>$outlog
+    comparate2.func
+            echo "Arquivos diferentes!">>$outlog
+            echo "Subistituindo arquivo atual pelo baixado">>$outlog
+                cp -f $subjectfiled $subjectfile 2>&1 |tee -a $outlog
+            echo "Reiniciando MailScanner">>$outlog
+                reinit.mail.func 2>&1 |tee -a $outlog
+            echo "Removendo arquivo Baixado">>$outlog
+                rm $subjectfiled 2>&1 |tee -a $outlog
+            echo "FIM!">>$outlog
     else
+    comparate2.func
         echo "Arquivo baixado e atual são iguais, Sem atualização.">>$outlog
         echo "Removendo arquivo baixado.">>$outlog
-            rm $spamdfile 2>&1 |tee -a $outlog
+            rm $subjectfiled 2>&1 |tee -a $outlog
         echo "FIM!">>$outlog
     fi
 }
 
+comparate2.func(){
+   diff --brief $bodyfiled $bodyfile >/dev/null
+comp_value=$?
+if [ $comp_value -eq 1 ]
+    then
+        echo "Arquivos diferentes!">>$outlog
+        echo "Subistituindo arquivo atual pelo baixado">>$outlog
+        cp -f $bodyfiled $bodyfile 2>&1 |tee -a $outlog
+        reinit.mail.func 2>&1 |tee -a $outlog
+    else
+        echo "Arquivo baixado e atual são iguais, Sem atualização.">>$outlog
+        echo "Removendo arquivo baixado.">>$outlog
+fi
+}
 
 
 
@@ -49,14 +68,14 @@ echo "Download efetuado">>$outlog
 
 
 echo "" >>$outlog
-echo "Verificando se "$spamfile" existe" >>$outlog
-if [ -f $spamfile ]; then
+echo "Verificando se "$subjectfile" existe" >>$outlog
+if [ -f $subjectfile ]; then
     echo "O arquivo existe"
     echo "">>$outlog
     comparate.func
     else
     echo "">>$outlog
     echo "Criando aruivo">>$outlog
-    touch $spamfile 2>&1 |tee -a $outlog
+    touch $subjectfile 2>&1 |tee -a $outlog
     comparate.func
 fi
