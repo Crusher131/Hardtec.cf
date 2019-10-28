@@ -259,9 +259,9 @@ header BR_OPORTUNIDADE_SUBJ  Subject =~ /.*oportunidade.*/i
 describe BR_OPORTUNIDADE_SUBJ    oportunidade
 score BR_OPORTUNIDADE_SUBJ   5
 
-header BR_OPORTUNIDADE_SUBJ  Subject =~ /.*oportunidade.*/i
-describe BR_OPORTUNIDADE_SUBJ    oportunidade
-score BR_OPORTUNIDADE_SUBJ   5
+header BR_OPORTUNIDADE2_SUBJ  Subject =~ /oportunidade!?/i
+describe BR_OPORTUNIDADE2_SUBJ    oportunidade2
+score BR_OPORTUNIDADE2_SUBJ   5
 
 ###########################################
 ############### BODY RULES ###############
