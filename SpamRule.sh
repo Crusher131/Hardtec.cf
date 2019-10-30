@@ -4,9 +4,8 @@ bodyfile="/etc/mail/spamassassin/HardtecBody.cf"
 service=MailScanner
 subjectfiled="/tmp/HardtecSubject.cf"
 bodyfiled="/tmp/HardtecBody.cf"
-git="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
-git2="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
-
+gitsub="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
+gitbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
 
 reinit.mail.func(){
 if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
@@ -56,24 +55,39 @@ if [ $comp_value -eq 1 ]
 fi
 }
 
-
-
 echo "Iniciando atualização das regras do spamassassin." > $outlog
 echo "">>$outlog
 echo "Efetuando download do arquivo hardtec.cf">>$outlog
 echo "">>$outlog
-wget --directory-prefix=/tmp/ $git --no-check-certificate 2>&1 | tee -a $outlog
+wget --directory-prefix=/tmp/ $gitsub --no-check-certificate 2>&1 | tee -a $outlog
+wget --directory-prefix=/tmp/ $gitbody --no-check-certificate 2>&1 | tee -a $outlog
 echo "Download efetuado">>$outlog
-
-
-
 echo "" >>$outlog
 echo "Verificando se "$subjectfile" existe" >>$outlog
 if [ -f $subjectfile ]; then
     echo "O arquivo existe"
     echo "">>$outlog
+    if [ -f $bodyfile ]; then
+    echo "O arquivo existe"
+    echo "">>$outlog
     comparate.func
     else
+    echo "">>$outlog
+    echo "Criando aruivo">>$outlog
+    touch $bodyfile 2>&1 |tee -a $outlog
+    comparate.func
+fi
+    else if [ -f $bodyfile ]; then
+    echo "O arquivo existe"
+    echo "">>$outlog
+    comparate.func
+    else
+    echo "">>$outlog
+    echo "Criando aruivo">>$outlog
+    touch $bodyfile 2>&1 |tee -a $outlog
+    comparate.func
+fi
+    
     echo "">>$outlog
     echo "Criando aruivo">>$outlog
     touch $subjectfile 2>&1 |tee -a $outlog
