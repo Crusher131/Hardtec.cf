@@ -1,95 +1,138 @@
-outlog="/var/log/spamrule.log"
-subjectfile="/etc/mail/spamassassin/HardtecSubject.cf"
-bodyfile="/etc/mail/spamassassin/HardtecBody.cf"
-service=MailScanner
-subjectfiled="/tmp/HardtecSubject.cf"
-bodyfiled="/tmp/HardtecBody.cf"
-gitsub="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
-gitbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
+#!/bin/bash
+#
+# versao 0.1
+#
+# INFORMAÇÕES
+#   SpamRule.sh         
+#
+# DESCRICAO
+#   Atualiza regras de anti-spam dos servidores de E-mail
+#
+# NOTA
+#   Testado e desenvolvido no Centos 7 e Centos 6
+#   
+#  DESENVOLVIDO_POR
+#  Jeferson Zacarias Sens       -        jefe.zaca@icloud.com
+#
+#########################################################################################################################################
 
-reinit.mail.func(){
-if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
-then
-service mailscanner restart
-else
-service MailScanner restart
-fi
+# Variaveis
+log="/var/log/spamrule.log"
+subjectrule="/etc/mail/spamassassin/HardtecSubject.cf"
+bodyrule="/etc/mail/spamassassin/HardtecBody.cf"
+service=MailScanner
+subjectdownloaded="/tmp/HardtecSubject.cf"
+bodydownloaded="/tmp/HardtecBody.cf"
+wgetsubject="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
+wgetbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
+paramwget="--directory-prefix=/tmp/ -q --show-progress --no-check-certificate"
+retorno=0
+
+#Função responsavel pelo Log
+Log(){
+    if [ -z "$1" ]; then
+        cat
+    else
+        printf '%s\n' "$@" 
+    fi | tee -a "$log"
 }
 
-comparate.func(){
-    echo "Verificando arquivo baixado e arquivo atual">>$outlog
-    diff --brief $subjectfiled $subjectfile >/dev/null
-comp_value=$?
-if [ $comp_value -eq 1 ]
-    then
-    comparate2.func
-            echo "Arquivos diferentes!">>$outlog
-            echo "Subistituindo arquivo atual pelo baixado">>$outlog
-                cp -f $subjectfiled $subjectfile 2>&1 |tee -a $outlog
-            echo "Reiniciando MailScanner">>$outlog
-                reinit.mail.func 2>&1 |tee -a $outlog
-            echo "Removendo arquivo Baixado">>$outlog
-                rm $subjectfiled 2>&1 |tee -a $outlog
-            echo "FIM!">>$outlog
-    else
-    comparate2.func
-        echo "Arquivo baixado e atual são iguais, Sem atualização.">>$outlog
-        echo "Removendo arquivo baixado.">>$outlog
-            rm $subjectfiled 2>&1 |tee -a $outlog
-        echo "FIM!">>$outlog
+#Função responsavel por reiniciar o serviço do MailScanner
+MailerRestart(){
+    if [ $bodyvalue -eq 1 ] || [ $subjectvalue -eq 1 ]; then
+        if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 )); then
+            service mailscanner restart
+        else
+            service MailScanner restart
+        fi
+        echo "Serviços do MailScanner reiniciados"
     fi
 }
 
-comparate2.func(){
-   diff --brief $bodyfiled $bodyfile >/dev/null
-comp_value=$?
-if [ $comp_value -eq 1 ]
-    then
-        echo "Arquivos diferentes!">>$outlog
-        echo "Subistituindo arquivo atual pelo baixado">>$outlog
-        cp -f $bodyfiled $bodyfile 2>&1 |tee -a $outlog
-        reinit.mail.func 2>&1 |tee -a $outlog
-    else
-        echo "Arquivo baixado e atual são iguais, Sem atualização.">>$outlog
-        echo "Removendo arquivo baixado.">>$outlog
-fi
+#Função responsavel por limpar os arquivos baixados
+RemoveFiles() {
+    rm -rfv $bodydownloaded
+    echo ""
+    rm -rfv $subjectdownloaded
+MailerRestart
 }
 
-echo "Iniciando atualização das regras do spamassassin." > $outlog
-echo "">>$outlog
-echo "Efetuando download do arquivo hardtec.cf">>$outlog
-echo "">>$outlog
-wget --directory-prefix=/tmp/ $gitsub --no-check-certificate 2>&1 | tee -a $outlog
-wget --directory-prefix=/tmp/ $gitbody --no-check-certificate 2>&1 | tee -a $outlog
-echo "Download efetuado">>$outlog
-echo "" >>$outlog
-echo "Verificando se "$subjectfile" existe" >>$outlog
-if [ -f $subjectfile ]; then
-    echo "O arquivo existe"
-    echo "">>$outlog
-    if [ -f $bodyfile ]; then
-    echo "O arquivo existe"
-    echo "">>$outlog
-    comparate.func
+#Função responsavel por checar os arquivos Baixados
+CopyFiles2() {
+    if [ $bodyvalue -eq 1 ]; then
+        echo ""
+        echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
+        cp -f $bodydownloaded $bodyrule
     else
-    echo "">>$outlog
-    echo "Criando aruivo">>$outlog
-    touch $bodyfile 2>&1 |tee -a $outlog
-    comparate.func
-fi
-    else if [ -f $bodyfile ]; then
-    echo "O arquivo existe"
-    echo "">>$outlog
-    comparate.func
+        echo ""
+        echo "Arquivo $bodyrule é igual ao $bodydownloaded nenhuma ação foi tomada"
+    fi
+    RemoveFiles
+}
+
+#Função responsavel por checar os arquivos Baixados
+CopyFiles() {
+    if [ $subjectvalue -eq 1 ]; then
+    echo ""
+    echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
+    cp -f $subjectdownloaded $subjectrule
     else
-    echo "">>$outlog
-    echo "Criando aruivo">>$outlog
-    touch $bodyfile 2>&1 |tee -a $outlog
-    comparate.func
-fi
-    
-    echo "">>$outlog
-    echo "Criando aruivo">>$outlog
-    touch $subjectfile 2>&1 |tee -a $outlog
-    comparate.func
-fi
+    echo ""
+    echo "Arquivo $subjectrule é igual ao $subjectdownloaded nenhuma ação foi tomada"
+    fi
+    CopyFiles2
+}
+
+#Função responsavel por comparar os arquivos baixados com os atualmente ultilizados
+comparatefile() {
+    diff --brief $subjectdownloaded $subjectrule >/dev/null
+    subjectvalue=$?
+    diff --brief $bodydownloaded $bodyrule >/dev/null
+    bodyvalue=$?
+    CopyFiles
+}
+
+#Função responsavel por efetuar a checagem da existencia dos arquivos
+CheckBody() {
+    if [ -f $bodyrule ]; then
+        echo "O arquivo $bodyrule existe"
+    else
+        echo "O arquivo $bodyrule não existe, criando o arquivo"
+        echo ""
+        touch $bodyrule
+        echo "Arquivo $bodyrule criado"
+    fi    
+    comparatefile
+}
+
+#Função responsavel por efetuar a checagem da existencia dos arquivos
+CheckSub() {
+    if [ -f $subjectrule ]; then
+        echo "O arquivo $subjectrule existe, prosseguindo com a checagem do arquivo $bodyrule"
+    else
+        echo "O arquivo $subjectrule não existe, criando o arquivo"
+        echo ""
+        touch $subjectrule
+        echo "Arquivo $subjectrule criado, prosseguindo com a checagem do arquivo $bodyrule"
+    fi
+    CheckBody
+}
+
+#Função Inicial!
+FuncInicial(){
+    echo "Iniciando atualização das regras anti-spam"
+    echo ""
+    echo "Iniciando download do arquivo de regras no assunto"
+    wget $paramwget $wgetsubject
+    echo ""
+    echo "Download finalizado"
+    echo "Iniciando download do arquivo de regras no corpo"
+    wget $paramwget $wgetbody
+    echo ""
+    echo "Download finalizado"
+    echo ""
+    echo "Verificando se "$subjectrule" existe"
+    CheckSub 
+}
+
+FuncInicial 2>&1 | Log
