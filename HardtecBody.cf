@@ -2,11 +2,6 @@
 #
 ################################
 
-
-body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
-describe BR_DIVULGUE_SUA        Divulgue seu
-score    BR_DIVULGUE_SUA        20
-
 body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
 describe BR_DIVULGUE_SUA        Divulgue seu
 score    BR_DIVULGUE_SUA        20
@@ -74,3 +69,15 @@ score    BR_MALADIRETA          20
 rawbody  BR_MALADIRETA2         /mala.{0,5}direta\s+de\s+e\-*mail\'*s*/i
 describe BR_MALADIRETA2         Mala direta 2
 score    BR_MALADIRETA2         20
+
+rawbody  BR_ORCAMENTO         /Anexo\sor.{1}amento/i
+describe BR_ORCAMENTO         Anexo Orcamento
+score    BR_ORCAMENTO         20
+
+rawbody  BR_PETICAO         /.*peti[cçs][aã]o.*/i
+describe BR_PETICAO         Anexo Orcamento
+score    BR_PETICAO         3
+
+rawbody  BR_PETICAO         /.*peti[cçs][aã]o.*/i
+describe BR_PETICAO         Anexo Orcamento
+score    BR_PETICAO         3

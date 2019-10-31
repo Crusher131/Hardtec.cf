@@ -270,3 +270,39 @@ score BR_RASTREAMENTO_SUBJ 20
 header BR_PEDIDO2_SUBJ Subject =~  /Seu\spedido\s\(\s.{7}\s\)\sesta\sa\scaminho\s?!?/
 describe BR_PEDIDO2_SUBJ   pedido a caminho
 score BR_PEDIDO2_SUBJ 20
+
+header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/I
+describe BR_MEGANORDE_SUBJ   MEGANORDE
+score BR_MEGANORDE_SUBJ 20
+
+header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/I
+describe BR_MEGANORDE_SUBJ   MEGANORDE
+score BR_MEGANORDE_SUBJ 20
+
+header BR_PRODUTOS_SUBJ Subject =~  /.*produtos.*/I
+describe BR_PRODUTOS_SUBJ   produtos
+score BR_PRODUTOS_SUBJ 3
+
+header BR_PERSONALIZADO_SUBJ Subject =~  /.*personalizados?.*/I
+describe BR_PERSONALIZADO_SUBJ   personalizados
+score BR_PERSONALIZADO_SUBJ 5
+
+header BR_SENDER_SUB_SUBJ Subject =~  /.*\@.*/I
+describe BR_SENDER_SUB_SUBJ   Sender on subject?
+score BR_SENDER_SUB_SUBJ 13
+
+header BR_LOGO_SUBJ Subject =~  /.*logo.*/I
+describe BR_LOGO_SUBJ   logo
+score BR_LOGO_SUBJ 3
+
+header BR_ORCAMENTO_SUBJ Subject =~  /.*or[sçc]amento.*/I
+describe BR_ORCAMENTO_SUBJ   Orçamento
+score BR_ORCAMENTO_SUBJ 5
+
+header  BR_DINHEIRO_SUBJ Subject =~  /.*Fa[çcs]a\sDinheiro\sOnline/
+describe BR_DINHEIRO_SUBJ   faça dinheiro online
+score    BR_DINHEIRO_SUBJ   20
+
+header  BR_PEDIDOS_IE_SUBJ Subject =~  /Gerenciamento\sde\sPedidos\sIE/
+describe BR_PEDIDOS_IE_SUBJ   Gerenciamento de Pedidos IE
+score    BR_PEDIDOS_IE_SUBJ   20
