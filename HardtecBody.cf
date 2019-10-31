@@ -2,6 +2,11 @@
 #
 ################################
 
+
+body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
+describe BR_DIVULGUE_SUA        Divulgue seu
+score    BR_DIVULGUE_SUA        20
+
 body     BR_DIVULGUE_SUA        /divulgue\s+(?:sua|seu)/i
 describe BR_DIVULGUE_SUA        Divulgue seu
 score    BR_DIVULGUE_SUA        20
