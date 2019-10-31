@@ -25,8 +25,10 @@ subjectdownloaded="/tmp/HardtecSubject.cf"
 bodydownloaded="/tmp/HardtecBody.cf"
 wgetsubject="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
 wgetbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
-paramwget="--directory-prefix=/tmp/ -q --show-progress --no-check-certificate"
+paramwget7="--directory-prefix=/tmp/ -q --show-progress --no-check-certificate"
+paramwget6="--directory-prefix=/tmp/ -q --no-check-certificate"
 retorno=0
+SOversion=$(cat /etc/redhat-release | grep -Eo '[6-7]{1}')
 
 #Função responsavel pelo Log
 Log(){
@@ -38,14 +40,24 @@ Log(){
 }
 
 #Função responsavel por reiniciar o serviço do MailScanner
+# MailerRestart(){
+#     if [ $bodyvalue -eq 1 ] || [ $subjectvalue -eq 1 ]; then
+#         if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 )); then
+#             service MailScanner restart
+#         else
+#             service mailscanner restart
+#         fi
+#         echo "Serviços do MailScanner reiniciados"
+#     fi
+# }
+
 MailerRestart(){
     if [ $bodyvalue -eq 1 ] || [ $subjectvalue -eq 1 ]; then
-        if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 )); then
+        if [ $SOversion -eq 7 ]; then
             service mailscanner restart
         else
             service MailScanner restart
         fi
-        echo "Serviços do MailScanner reiniciados"
     fi
 }
 
@@ -123,11 +135,19 @@ FuncInicial(){
     echo "Iniciando atualização das regras anti-spam"
     echo ""
     echo "Iniciando download do arquivo de regras no assunto"
-    wget $paramwget $wgetsubject
-    echo ""
+    if [ $SOversion -eq 7 ]; then
+        wget $paramwget7 $wgetsubject
+            echo ""
     echo "Download finalizado"
     echo "Iniciando download do arquivo de regras no corpo"
-    wget $paramwget $wgetbody
+    wget $paramwget7 $wgetbody
+    else
+        wget $paramwget6 $wgetsubject
+            echo ""
+    echo "Download finalizado"
+    echo "Iniciando download do arquivo de regras no corpo"
+    wget $paramwget6 $wgetbody
+    fi
     echo ""
     echo "Download finalizado"
     echo ""
