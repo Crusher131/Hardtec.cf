@@ -275,10 +275,6 @@ header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/I
 describe BR_MEGANORDE_SUBJ   MEGANORDE
 score BR_MEGANORDE_SUBJ 20
 
-header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/I
-describe BR_MEGANORDE_SUBJ   MEGANORDE
-score BR_MEGANORDE_SUBJ 20
-
 header BR_PRODUTOS_SUBJ Subject =~  /.*produtos.*/I
 describe BR_PRODUTOS_SUBJ   produtos
 score BR_PRODUTOS_SUBJ 3
@@ -306,3 +302,47 @@ score    BR_DINHEIRO_SUBJ   20
 header  BR_PEDIDOS_IE_SUBJ Subject =~  /Gerenciamento\sde\sPedidos\sIE/
 describe BR_PEDIDOS_IE_SUBJ   Gerenciamento de Pedidos IE
 score    BR_PEDIDOS_IE_SUBJ   20
+
+header  BR_PEDIDOS_IE_SUBJ Subject =~  /Gerenciamento\sde\sPedidos\sIE/
+describe BR_PEDIDOS_IE_SUBJ   Gerenciamento de Pedidos IE
+score    BR_PEDIDOS_IE_SUBJ   20
+
+header  BR_QUEJA_SUBJ Subject =~  /Queja\sNo\s[0-9]{1,5}/
+describe BR_QUEJA_SUBJ   Queja No
+score    BR_QUEJA_SUBJ   20
+
+header  BR_DCPE_SUBJ Subject =~  /.*DPCE.*/
+describe BR_DCPE_SUBJ   Queja No
+score    BR_DCPE_SUBJ   2
+
+header  BR_DCPE2_SUBJ Subject =~  /DPCE-\sDepartamento\sPolicia\sCivil\sEletronica\s-\sPROCEDIMENTO.*INVESTIGATORIO.N.[0-9]{3}\.[0-9]{3}\/[0-9]{4}/
+describe BR_DCPE2_SUBJ   Queja No2
+score    BR_DCPE2_SUBJ   20
+
+header  BR_NF_E_SUBJ Subject =~  /Compra\sconfirmada\scom\ssucesso\s?\:\s?.*/
+describe BR_NF_E_SUBJ   NF_e
+score    BR_NF_E_SUBJ   20
+
+header  BR_PROCESSUAL_SUBJ Subject =~  /Andamento\sProcessual\sRef\:\sPje[0-9]{5}/
+describe BR_PROCESSUAL_SUBJ   PROCESSUAL
+score    BR_PROCESSUAL_SUBJ   20
+
+header BR_CHAVE_ACESSO_SUBJ Subject =~ /Chave\sde\sacesso\:\s[0-9]{44}.*/
+describe BR_CHAVE_ACESSO_SUBJ CHAVE DE ACESSO
+score BR_CHAVE_ACESSO_SUBJ 20
+
+header BR_WEB_ZAP_SUBJ Subject =~ /Verificamos\sque\sFoi\sfeito\sum\sacesso\sna\ssua\sConta\sdo\sWhatsApp\sWeb\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}/
+describe BR_WEB_ZAP_SUBJ WEB ZAP
+score BR_WEB_ZAP_SUBJ 20
+
+header BR_LOTO_FACIL_SUBJ Subject =~ /Acerte\sSempre\sna\sLotof[áa]cil\,\sSistema\sGarantido\./i
+describe BR_LOTO_FACIL_SUBJ Loto Fácil
+score BR_LOTO_FACIL_SUBJ 20
+
+header  BR_VIVO_BOLETO_SUBJ Subject =~  /Vivo\s-\sConforme\ssua\ssolicita[çc][ãa]o\sestamos\senviando\sem\sanexo\sa\ssua\sfatura\spor\se-mail\./
+describe BR_VIVO_BOLETO_SUBJ   vivo
+score    BR_VIVO_BOLETO_SUBJ   20
+
+header BR_CHINES_SUBJ Subject =~ /.*[玩捕鱼到银河點卡姆邀您註冊嶺⑤抽手機還能搶紅寶功效强大的风里雨我在等妳紸拿服實力誠点て这颗真心不已经对你描画好送有].*/
+describe BR_CHINES_SUBJ chines
+score BR_CHINES_SUBJ 20

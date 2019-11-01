@@ -132,6 +132,7 @@ CheckSub() {
 
 #Função Inicial!
 FuncInicial(){
+    echo "" > $log
     echo "Iniciando atualização das regras anti-spam"
     echo ""
     echo "Iniciando download do arquivo de regras no assunto"

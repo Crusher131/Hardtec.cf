@@ -78,6 +78,6 @@ rawbody  BR_PETICAO         /.*peti[cçs][aã]o.*/i
 describe BR_PETICAO         Anexo Orcamento
 score    BR_PETICAO         3
 
-rawbody  BR_PETICAO         /.*peti[cçs][aã]o.*/i
-describe BR_PETICAO         Anexo Orcamento
-score    BR_PETICAO         3
+rawbody  BR_PETICAO         /[orÃ§amento]/i
+describe BR_PETICAO         ILEGIVEL
+score    BR_PETICAO         20
