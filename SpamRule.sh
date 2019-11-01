@@ -25,8 +25,7 @@ subjectdownloaded="/tmp/HardtecSubject.cf"
 bodydownloaded="/tmp/HardtecBody.cf"
 wgetsubject="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
 wgetbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
-paramwget7="--directory-prefix=/tmp/ -q --show-progress --no-check-certificate"
-paramwget6="--directory-prefix=/tmp/ -q --no-check-certificate"
+paramwget=" --directory-prefix=/tmp/ -q --no-check-certificate"
 retorno=0
 SOversion=$(cat /etc/redhat-release | grep -Eo '[6-7]{1}')
 
@@ -136,19 +135,11 @@ FuncInicial(){
     echo "Iniciando atualização das regras anti-spam"
     echo ""
     echo "Iniciando download do arquivo de regras no assunto"
-    if [ $SOversion -eq 7 ]; then
-        wget $paramwget7 $wgetsubject
-            echo ""
+    wget $paramwget $wgetsubject
+    echo ""
     echo "Download finalizado"
     echo "Iniciando download do arquivo de regras no corpo"
-    wget $paramwget7 $wgetbody
-    else
-        wget $paramwget6 $wgetsubject
-            echo ""
-    echo "Download finalizado"
-    echo "Iniciando download do arquivo de regras no corpo"
-    wget $paramwget6 $wgetbody
-    fi
+    wget $paramwget $wgetbody
     echo ""
     echo "Download finalizado"
     echo ""

@@ -342,7 +342,3 @@ score BR_LOTO_FACIL_SUBJ 20
 header  BR_VIVO_BOLETO_SUBJ Subject =~  /Vivo\s-\sConforme\ssua\ssolicita[çc][ãa]o\sestamos\senviando\sem\sanexo\sa\ssua\sfatura\spor\se-mail\./
 describe BR_VIVO_BOLETO_SUBJ   vivo
 score    BR_VIVO_BOLETO_SUBJ   20
-
-header BR_CHINES_SUBJ Subject =~ /.*[玩捕鱼到银河點卡姆邀您註冊嶺⑤抽手機還能搶紅寶功效强大的风里雨我在等妳紸拿服實力誠点て这颗真心不已经对你描画好送有].*/
-describe BR_CHINES_SUBJ chines
-score BR_CHINES_SUBJ 20
