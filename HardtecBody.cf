@@ -73,11 +73,3 @@ score    BR_MALADIRETA2         20
 rawbody  BR_ORCAMENTO         /Anexo\sor.{1}amento/i
 describe BR_ORCAMENTO         Anexo Orcamento
 score    BR_ORCAMENTO         20
-
-rawbody  BR_PETICAO         /.*peti[cçs][aã]o.*/i
-describe BR_PETICAO         Anexo Orcamento
-score    BR_PETICAO         3
-
-rawbody  BR_PETICAO         /[orÃ§amento]/i
-describe BR_PETICAO         ILEGIVEL
-score    BR_PETICAO         20
