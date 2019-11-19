@@ -51,7 +51,7 @@ header   BR_AMIL_SUBJ   Subject =~ /(?:(a|A)\s){0,1}((M|m)aior|(M|m)elhor)\soper
 describe BR_AMIL_SUBJ    Email vindo da amil
 score    BR_AMIL_SUBJ    20
 
-header   BR_GANHOU_SUBJ   Subject =~ /*ganhou*/i
+header   BR_GANHOU_SUBJ   Subject =~ /.*ganhou.*/i
 describe BR_GANHOU_SUBJ    Ganhou
 score    BR_GANHOU_SUBJ    5
 
