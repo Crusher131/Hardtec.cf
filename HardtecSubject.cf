@@ -271,27 +271,27 @@ header BR_PEDIDO2_SUBJ Subject =~  /Seu\spedido\s\(\s.{7}\s\)\sesta\sa\scaminho\
 describe BR_PEDIDO2_SUBJ   pedido a caminho
 score BR_PEDIDO2_SUBJ 20
 
-header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/I
+header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/i
 describe BR_MEGANORDE_SUBJ   MEGANORDE
 score BR_MEGANORDE_SUBJ 20
 
-header BR_PRODUTOS_SUBJ Subject =~  /.*produtos.*/I
+header BR_PRODUTOS_SUBJ Subject =~  /.*produtos.*/i
 describe BR_PRODUTOS_SUBJ   produtos
 score BR_PRODUTOS_SUBJ 3
 
-header BR_PERSONALIZADO_SUBJ Subject =~  /.*personalizados?.*/I
+header BR_PERSONALIZADO_SUBJ Subject =~  /.*personalizados?.*/i
 describe BR_PERSONALIZADO_SUBJ   personalizados
 score BR_PERSONALIZADO_SUBJ 5
 
-header BR_SENDER_SUB_SUBJ Subject =~  /.*\@.*/I
+header BR_SENDER_SUB_SUBJ Subject =~  /.*\@.*/i
 describe BR_SENDER_SUB_SUBJ   Sender on subject?
 score BR_SENDER_SUB_SUBJ 13
 
-header BR_LOGO_SUBJ Subject =~  /.*logo.*/I
+header BR_LOGO_SUBJ Subject =~  /.*logo.*/i
 describe BR_LOGO_SUBJ   logo
 score BR_LOGO_SUBJ 3
 
-header BR_ORCAMENTO_SUBJ Subject =~  /.*or[sçc]amento.*/I
+header BR_ORCAMENTO_SUBJ Subject =~  /.*or[sçc]amento.*/i
 describe BR_ORCAMENTO_SUBJ   Orçamento
 score BR_ORCAMENTO_SUBJ 5
 
@@ -342,3 +342,7 @@ score BR_LOTO_FACIL_SUBJ 20
 header  BR_VIVO_BOLETO_SUBJ Subject =~  /Vivo\s-\sConforme\ssua\ssolicita[çc][ãa]o\sestamos\senviando\sem\sanexo\sa\ssua\sfatura\spor\se-mail\./
 describe BR_VIVO_BOLETO_SUBJ   vivo
 score    BR_VIVO_BOLETO_SUBJ   20
+
+header BR_MAGAZINE_LUIZA_SUBJ Subject =~ /.*[Mm]agazine\s[Ll]uiza.*/ 
+describe BR_MAGAZINE_LUIZA_SUBJ Magazine Luiza
+score BR_MAGAZINE_LUIZA_SUBJ 20
