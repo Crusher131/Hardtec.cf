@@ -448,8 +448,8 @@ header BR_BLACK_FRIDAY_SUBJ Subject =~ /.*black\sfriday.*/i
 describe BR_BLACK_FRIDAY_SUBJ   BLACK FRIDAY
 score BR_BLACK_FRIDAY_SUBJ 6
 
-header BR_SMART_TV_SUBJ Subject =~ /.*smart[\s-|\\\/]tv.*/i
-describe BR_SMART_TV_SUBJ   BLACK FRIDAY
+header BR_SMART_TV_SUBJ Subject =~ /.*smart[\s-\|\\\/]tv.*/i
+describe BR_SMART_TV_SUBJ   TV
 score BR_SMART_TV_SUBJ 6
 
 header BR_SEGURO_BARATO_SUBJ Subject =~ /.*seguro.*mais\sbarato.*/i
