@@ -285,7 +285,7 @@ score BR_PERSONALIZADO_SUBJ 5
 
 header BR_SENDER_SUB_SUBJ Subject =~  /.*\@.*/i
 describe BR_SENDER_SUB_SUBJ   Sender on subject?
-score BR_SENDER_SUB_SUBJ 13
+score BR_SENDER_SUB_SUBJ 4
 
 header BR_LOGO_SUBJ Subject =~  /.*logo.*/i
 describe BR_LOGO_SUBJ   logo
