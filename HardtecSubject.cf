@@ -159,8 +159,8 @@ header  BR_VISITE_SITE_SUBJ    Subject =~ /visite\so\ssite/i
 describe    BR_VISITE_SITE_SUBJ    visite o site
 score   BR_VISITE_SITE_SUBJ 12
 
-header  BR_INFO_SUBJ    Subject =~ /(saiba\smais.*|voc[eê]\squer.*)/i
-describe    BR_INFO_SUBJ    saiba mais|voce quer
+header  BR_INFO_SUBJ    Subject =~ /(saiba\smais.*|voc[eê]\squer.*|.*saiba\scomo.*)/i
+describe    BR_INFO_SUBJ    saiba mais|voce quer|saiba como
 score   BR_INFO_SUBJ 12
 
 header  BR_OLHE_SUBJ    Subject =~ /(.*d[ea]\suma\solhada.*|.*olh[ae]\sisso.*)/i
@@ -275,7 +275,7 @@ header BR_MEGANORDE_SUBJ Subject =~  /.*MEGANORDE.*/i
 describe BR_MEGANORDE_SUBJ   MEGANORDE
 score BR_MEGANORDE_SUBJ 20
 
-header BR_PRODUTOS_SUBJ Subject =~  /.*produtos.*/i
+header BR_PRODUTOS_SUBJ Subject =~  /.*produtos?.*/i
 describe BR_PRODUTOS_SUBJ   produtos
 score BR_PRODUTOS_SUBJ 3
 
@@ -311,223 +311,330 @@ header  BR_DCPE_SUBJ Subject =~  /.*DPCE.*/
 describe BR_DCPE_SUBJ   Queja No
 score    BR_DCPE_SUBJ   2
 
-header  BR_DCPE2_SUBJ Subject =~  /DPCE-\sDepartamento\sPolicia\sCivil\sEletronica\s-\sPROCEDIMENTO.*INVESTIGATORIO.N.[0-9]{3}\.[0-9]{3}\/[0-9]{4}/
-describe BR_DCPE2_SUBJ   Queja No2
-score    BR_DCPE2_SUBJ   20
+header      BR_DCPE2_SUBJ       Subject =~  /DPCE-\sDepartamento\sPolicia\sCivil\sEletronica\s-\sPROCEDIMENTO.*INVESTIGATORIO.N.[0-9]{3}\.[0-9]{3}\/[0-9]{4}/
+describe    BR_DCPE2_SUBJ       Queja No2
+score       BR_DCPE2_SUBJ       20
 
-header  BR_NF_E_SUBJ Subject =~  /Compra\sconfirmada\scom\ssucesso\s?\:\s?.*/
-describe BR_NF_E_SUBJ   NF_e
-score    BR_NF_E_SUBJ   20
+header      BR_NF_E_SUBJ        Subject =~  /Compra\sconfirmada\scom\ssucesso\s?\:\s?.*/
+describe    BR_NF_E_SUBJ        NF_e
+score       BR_NF_E_SUBJ        20
 
-header  BR_PROCESSUAL_SUBJ Subject =~  /Andamento\sProcessual\sRef\:\sPje[0-9]{5}/
-describe BR_PROCESSUAL_SUBJ   PROCESSUAL
-score    BR_PROCESSUAL_SUBJ   20
+header      BR_PROCESSUAL_SUBJ  Subject =~  /Andamento\sProcessual\sRef\:\sPje[0-9]{5}/
+describe    BR_PROCESSUAL_SUBJ  PROCESSUAL
+score       BR_PROCESSUAL_SUBJ  20
 
-header BR_CHAVE_ACESSO_SUBJ Subject =~ /Chave\sde\sacesso\:\s[0-9]{44}.*/
-describe BR_CHAVE_ACESSO_SUBJ CHAVE DE ACESSO
-score BR_CHAVE_ACESSO_SUBJ 20
+header      BR_KEY_ACESS_SUBJ   Subject =~ /Chave\sde\sacesso\:\s[0-9]{44}.*/
+describe    BR_KEY_ACESS_SUBJ   CHAVE DE ACESSO
+score       BR_KEY_ACESS_SUBJ   20
 
-header BR_WEB_ZAP_SUBJ Subject =~ /Verificamos\sque\sFoi\sfeito\sum\sacesso\sna\ssua\sConta\sdo\sWhatsApp\sWeb\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}/
-describe BR_WEB_ZAP_SUBJ WEB ZAP
-score BR_WEB_ZAP_SUBJ 20
+header      BR_WEB_ZAP_SUBJ     Subject =~ /Verificamos\sque\sFoi\sfeito\sum\sacesso\sna\ssua\sConta\sdo\sWhatsApp\sWeb\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}/
+describe    BR_WEB_ZAP_SUBJ     WEB ZAP
+score       BR_WEB_ZAP_SUBJ     20
 
-header BR_LOTO_FACIL2_SUBJ Subject =~ /Acerte\sSempre\sna\sLotof[áa]cil\,\sSistema\sGarantido\./i
-describe BR_LOTO_FACIL2_SUBJ Loto Fácil
-score BR_LOTO_FACIL2_SUBJ 20
+header      BR_LOTO_FACIL2_SUBJ Subject =~ /Acerte\sSempre\sna\sLotof[áa]cil\,\sSistema\sGarantido\./i
+describe    BR_LOTO_FACIL2_SUBJ Loto Fácil
+score       BR_LOTO_FACIL2_SUBJ 20
 
-header BR_LOTO_FACIL3_SUBJ Subject =~ /.*Lot[oó]\sf[áa]cil.*/i
-describe BR_LOTO_FACIL3_SUBJ Loto Fácil2
-score BR_LOTO_FACIL3_SUBJ 8
+header      BR_LOTO_FACIL3_SUBJ Subject =~ /.*Lot[oó]\sf[áa]cil.*/i
+describe    BR_LOTO_FACIL3_SUBJ Loto Fácil2
+score       BR_LOTO_FACIL3_SUBJ 8
 
-header  BR_VIVO_BOLETO_SUBJ Subject =~  /Vivo\s-\sConforme\ssua\ssolicita[çc][ãa]o\sestamos\senviando\sem\sanexo\sa\ssua\sfatura\spor\se-mail\./
-describe BR_VIVO_BOLETO_SUBJ   vivo
-score    BR_VIVO_BOLETO_SUBJ   20
+header      BR_VIVO_BOLETO_SUBJ Subject =~  /Vivo\s-\sConforme\ssua\ssolicita[çc][ãa]o\sestamos\senviando\sem\sanexo\sa\ssua\sfatura\spor\se-mail\./
+describe    BR_VIVO_BOLETO_SUBJ vivo
+score       BR_VIVO_BOLETO_SUBJ 20
 
-header BR_MAGAZINE_LUIZA_SUBJ Subject =~ /.*[Mm]agazine\s[Ll]uiza.*/ 
-describe BR_MAGAZINE_LUIZA_SUBJ Magazine Luiza
-score BR_MAGAZINE_LUIZA_SUBJ 20
+header      BR_MAGAZINE_SUBJ    Subject =~ /.*[Mm]agazine\s[Ll]uiza.*/ 
+describe    BR_MAGAZINE_SUBJ    Magazine Luiza
+score       BR_MAGAZINE_SUBJ    20
 
-header BR_INVADIDO_SUBJ Subject =~ /.*Seu\scomputador\sfoi\sinvadido\spor\shackers\.\sLeia\scom\surgencia\sas\sinstrucoes!?/i
-describe BR_INVADIDO_SUBJ   INVADIDO
-score BR_INVADIDO_SUBJ  20
+header      BR_INVADIDO_SUBJ    Subject =~ /.*Seu\scomputador\sfoi\sinvadido\spor\shackers\.\sLeia\scom\surgencia\sas\sinstrucoes!?/i
+describe    BR_INVADIDO_SUBJ    INVADIDO
+score       BR_INVADIDO_SUBJ    20
 
+header      BR_PRECISA_SUBJ     Subject =~ /voc[eê]\sprecisa\sver\sisso.*/i
+describe    BR_PRECISA_SUBJ     VOCE PRECISA VER ISSO
+score       BR_PRECISA_SUBJ     20
 
-header BR_VOCE_PRECISA_SUBJ Subject =~ /voc[eê]\sprecisa\sver\sisso.*/i
-describe BR_VOCE_PRECISA_SUBJ   VOCE PRECISA VER ISSO
-score BR_VOCE_PRECISA_SUBJ  20
+header      BR_LOTO_FACIL_SUBJ  Subject =~ /LOTO\SFÁCIL\SEXPERT_PROFISSIONAL.*/i
+describe    BR_LOTO_FACIL_SUBJ  LOTO FACIL
+score       BR_LOTO_FACIL_SUBJ  20
 
-header BR_LOTO_FACIL_SUBJ Subject =~ /LOTO\SFÁCIL\SEXPERT_PROFISSIONAL.*/i
-describe BR_LOTO_FACIL_SUBJ   LOTO FACIL
-score BR_LOTO_FACIL_SUBJ  20
+header      BR_SOMENTE_HJ_SUBJ  Subject =~ /.*somente\shoje.*/i
+describe    BR_SOMENTE_HJ_SUBJ  SOMENTE HOJE
+score       BR_SOMENTE_HJ_SUBJ  8
 
-header BR_SOMENTE_HOJE_SUBJ Subject =~ /.*somente\shoje.*/i
-describe BR_SOMENTE_HOJE_SUBJ   SOMENTE HOJE
-score BR_SOMENTE_HOJE_SUBJ  8
+header      BR_PRESENTE__SUBJ   Subject =~ /brindes\s((e\s)?presentes\spersonalizados|((e\s)?presentes\s)?para final de ano)/i
+describe    BR_PRESENTE__SUBJ   BRINDES E PRESENTES
+score       BR_PRESENTE__SUBJ   20
 
-header BR_BRINDES_PRESENTES_SUBJ Subject =~ /brindes\s((e\s)?presentes\spersonalizados|((e\s)?presentes\s)?para final de ano)/i
-describe BR_BRINDES_PRESENTES_SUBJ   BRINDES E PRESENTES
-score BR_BRINDES_PRESENTES_SUBJ 20
+header      BR_EVITE_SUBJ       Subject =~ /evite\s(as|estas|falar)\s(as\s)?5\sfrases\s(que|-)(\selas)?\smatam\s(as\s)?(suas\s)?vendas/i
+describe    BR_EVITE_SUBJ       EVITE ESTAS FRASES
+score       BR_EVITE_SUBJ       20
 
-header BR_EVITE_SUBJ Subject =~ /evite\s(as|estas|falar)\s(as\s)?5\sfrases\s(que|-)(\selas)?\smatam\s(as\s)?(suas\s)?vendas/i
-describe BR_EVITE_SUBJ   EVITE ESTAS FRASES
-score BR_EVITE_SUBJ 20
+header      BR_CALIGRAFIA_SUBJ  Subject =~ /.*melhore\ssua\scaligrafia\sem\s30\sdias\./i
+describe    BR_CALIGRAFIA_SUBJ  MELHORE SUA CALIGRAFIA
+score       BR_CALIGRAFIA_SUBJ  20
 
-header BR_CALIGRAFIA_SUBJ Subject =~ /.*melhore\ssua\scaligrafia\sem\s30\sdias\./i
-describe BR_CALIGRAFIA_SUBJ   MELHORE SUA CALIGRAFIA
-score BR_CALIGRAFIA_SUBJ 20
+header      BR_PRIMEIRO_GG_SUBJ Subject =~ /.*(seu|sua)\s(site|empresa)\s(empresa|na|em)\s(em\s)?primeir[ao]\s(p[aá]gina\s)?(no|do)\sgoogle/i
+describe    BR_PRIMEIRO_GG_SUBJ seu site em primeiro no google
+score       BR_PRIMEIRO_GG_SUBJ 20
 
-header BR_PRIMEIRO_NO_GOOGLE_SUBJ Subject =~ /.*(seu|sua)\s(site|empresa)\s(empresa|na|em)\s(em\s)?primeir[ao]\s(p[aá]gina\s)?(no|do)\sgoogle/i
-describe BR_PRIMEIRO_NO_GOOGLE_SUBJ   seu site em primeiro no google
-score BR_PRIMEIRO_NO_GOOGLE_SUBJ 20
+header      BR_CARTAO_SUBJ      Subject =~ /.*cart.{2}o.*/i
+describe    BR_CARTAO_SUBJ      CARTAO
+score       BR_CARTAO_SUBJ      4
 
-header BR_CARTAO_SUBJ Subject =~ /.*cart.{2}o.*/i
-describe BR_CARTAO_SUBJ   CARTAO
-score BR_CARTAO_SUBJ 4
+header      BR_CARREFOUR_SUBJ   Subject =~ /.*carrefour.*/i
+describe    BR_CARREFOUR_SUBJ   CARREFOUR
+score       BR_CARREFOUR_SUBJ   6
 
-header BR_CARREFOUR_SUBJ Subject =~ /.*carrefour.*/i
-describe BR_CARREFOUR_SUBJ   CARREFOUR
-score BR_CARREFOUR_SUBJ 6
+header      BR_GAMESHOW_SUBJ    Subject =~ /.*gameshow.*/i
+describe    BR_GAMESHOW_SUBJ    gameshow
+score       BR_GAMESHOW_SUBJ    6
 
-header BR_GAMESHOW_SUBJ Subject =~ /.*gameshow.*/i
-describe BR_GAMESHOW_SUBJ   gameshow
-score BR_GAMESHOW_SUBJ 6
+header      BR_CLUB_SUBJ        Subject =~ /.*clube?.*/i
+describe    BR_CLUB_SUBJ        CLUB
+score       BR_CLUB_SUBJ        6
 
-header BR_CLUB_SUBJ Subject =~ /.*clube?.*/i
-describe BR_CLUB_SUBJ   CLUB
-score BR_CLUB_SUBJ 6
+header      BR_SAM_SUBJ         Subject =~ /.*sam\'s.*/i
+describe    BR_SAM_SUBJ         SAMS
+score       BR_SAM_SUBJ         6
 
-header BR_SAM_SUBJ Subject =~ /.*sam\'s.*/i
-describe BR_SAM_SUBJ   CLUB
-score BR_SAM_SUBJ 6
+header      BR_EXCLUSIVO_SUBJ   Subject =~ /.*(exclusividade|exclusiva).*/i
+describe    BR_EXCLUSIVO_SUBJ   EXCLUSIVIDADE
+score       BR_EXCLUSIVO_SUBJ   7
 
-header BR_EXCLUSIVIDADE_SUBJ Subject =~ /.*(exclusividade|exclusiva).*/i
-describe BR_EXCLUSIVIDADE_SUBJ   EXCLUSIVIDADE
-score BR_EXCLUSIVIDADE_SUBJ 7
+header      BR_RSD_ENERGIA_SUBJ Subject =~ /.*seus\sres.{1,2}duos\stransformados\sem\senergia/i
+describe    BR_RSD_ENERGIA_SUBJ RESIDUOS EM ENERGIA
+score       BR_RSD_ENERGIA_SUBJ 20
 
-header BR_RESIDUOS_ENERGIA_SUBJ Subject =~ /.*seus\sres.{1,2}duos\stransformados\sem\senergia/i
-describe BR_RESIDUOS_ENERGIA_SUBJ   RESIDUOS EM ENERGIA
-score BR_RESIDUOS_ENERGIA_SUBJ 20
+header      BR_EQP_METAS_SUBJ   Subject =~ /(Sua\sequipe\s(comercial\s)?n.{1,2}o\sbateu\sas?\smetas?\?|bata\sas\smetas\scin\sesse\scursco.*)/i
+describe    BR_EQP_METAS_SUBJ   EQUIPE METAS
+score       BR_EQP_METAS_SUBJ   20
 
-header BR_EQUIPE_METAS_SUBJ Subject =~ /(Sua\sequipe\s(comercial\s)?n.{1,2}o\sbateu\sas?\smetas?\?|bata\sas\smetas\scin\sesse\scursco.*)/i
-describe BR_EQUIPE_METAS_SUBJ   EQUIPE METAS
-score BR_EQUIPE_METAS_SUBJ 20
+header      BR_OCEAN_RSD_SUBJ   Subject =~ /.*(res.{1,2}duos.*oceans|oceans.*res.{1,2}duos).*/i
+describe    BR_OCEAN_RSD_SUBJ   OCEANS
+score       BR_OCEAN_RSD_SUBJ   20
 
-header BR_OCEANS_RESIDUOS_SUBJ Subject =~ /.*(res.{1,2}duos.*oceans|oceans.*res.{1,2}duos).*/i
-describe BR_OCEANS_RESIDUOS_SUBJ   OCEANS
-score BR_OCEANS_RESIDUOS_SUBJ 20
+header      BR_VENDEDOR_SUBJ    Subject =~ /.*torne-se\suma?\svendedora?.*/i
+describe    BR_VENDEDOR_SUBJ    TORNESE UM VENDEDOR
+score       BR_VENDEDOR_SUBJ    4
 
-header BR_VENDEDOR_SUBJ Subject =~ /.*torne-se\suma?\svendedora?.*/i
-describe BR_VENDEDOR_SUBJ   OCEANS
-score BR_VENDEDOR_SUBJ 4
+header      BR_PLANO_SUBJ       Subject =~ /.*plano.*/i
+describe    BR_PLANO_SUBJ       PLANO
+score       BR_PLANO_SUBJ       2
 
-header BR_PLANO_SUBJ Subject =~ /.*plano.*/i
-describe BR_PLANO_SUBJ   PLANO
-score BR_PLANO_SUBJ 2
+header      BR_CAMPEAO_SUBJ     Subject =~ /.*campe.{1,2}o.*/i
+describe    BR_CAMPEAO_SUBJ     CAMPEAO
+score       BR_CAMPEAO_SUBJ     4
 
-header BR_CAMPEAO_SUBJ Subject =~ /.*campe.{1,2}o.*/i
-describe BR_CAMPEAO_SUBJ   CAMPEAO
-score BR_CAMPEAO_SUBJ 4
+header      BR_GANHE_MUITO_SUBJ Subject =~ /.*ganhe\smuito.*/i
+describe    BR_GANHE_MUITO_SUBJ ANHE MUITO
+score       BR_GANHE_MUITO_SUBJ 6
 
-header BR_GANHE_MUITO_SUBJ Subject =~ /.*ganhe\smuito.*/i
-describe BR_GANHE_MUITO_SUBJ   GANHE MUITO
-score BR_GANHE_MUITO_SUBJ 6
+header      BR_CORRE_SUBJ       Subject =~ /.*corr[ae]\santes\sque\sacab[ae].*/i
+describe    BR_CORRE_SUBJ       Corre
+score       BR_CORRE_SUBJ       6
 
-header BR_CORRE_SUBJ Subject =~ /.*corr[ae]\santes\sque\sacab[ae].*/i
-describe BR_CORRE_SUBJ   Corre
-score BR_CORRE_SUBJ 6
+header      BR_PONTOS_SUBJ      Subject =~ /.*pontos?.*/i
+describe    BR_PONTOS_SUBJ      PONTOS
+score       BR_PONTOS_SUBJ      6
 
-header BR_PONTOS_SUBJ Subject =~ /.*pontos?.*/i
-describe BR_PONTOS_SUBJ   PONTOS
-score BR_PONTOS_SUBJ 6
+header      BR_METAS_SUBJ       Subject =~ /.*metas?.*/i
+describe    BR_METAS_SUBJ       METAS
+score       BR_METAS_SUBJ       3
 
-header BR_METAS_SUBJ Subject =~ /.*metas?.*/i
-describe BR_METAS_SUBJ   METAS
-score BR_METAS_SUBJ 3
+header      BR_BK_FRIDAY_SUBJ   Subject =~ /.*BLACK\s(FRIDAY|WEEK|NOVEMBER|DECEMBER).*/i
+describe    BR_BK_FRIDAY_SUBJ   BLACK FRIDAY
+score       BR_BK_FRIDAY_SUBJ   6
 
-header BR_BLACK_FRIDAY_SUBJ Subject =~ /.*black\sfriday.*/i
-describe BR_BLACK_FRIDAY_SUBJ   BLACK FRIDAY
-score BR_BLACK_FRIDAY_SUBJ 6
+header      BR_SMART_TV_SUBJ    Subject =~ /.*smart(\s|\-|\||\\|\/)tv.*/i
+describe    BR_SMART_TV_SUBJ    TV
+score       BR_SMART_TV_SUBJ    6
 
-header BR_SMART_TV_SUBJ Subject =~ /.*smart(\s|\-|\||\\|\/)tv.*/i
-describe BR_SMART_TV_SUBJ   TV
-score BR_SMART_TV_SUBJ 6
+header      BR_SEG_BARATO_SUBJ  Subject =~ /.*seguro.*mais\sbarato.*/i
+describe    BR_SEG_BARATO_SUBJ  SEGURO BARATO
+score       BR_SEG_BARATO_SUBJ  12
 
-header BR_SEGURO_BARATO_SUBJ Subject =~ /.*seguro.*mais\sbarato.*/i
-describe BR_SEGURO_BARATO_SUBJ   SEGURO BARATO
-score BR_SEGURO_BARATO_SUBJ 12
+header      BR_CONV_SAUDE_SUBJ  Subject =~ /.*conv.{1,2}nio\sde\ssa.{1,2}de.*/i
+describe    BR_CONV_SAUDE_SUBJ  CONVENIO DE SAUDE
+score       BR_CONV_SAUDE_SUBJ  9
 
-header BR_CONVENIO_SAUDE_SUBJ Subject =~ /.*conv.{1,2}nio\sde\ssa.{1,2}de.*/i
-describe BR_CONVENIO_SAUDE_SUBJ   CONVENIO DE SAUDE
-score BR_CONVENIO_SAUDE_SUBJ 9
+header      BR_BRINDE_SUBJ      Subject =~ /.*brindes?.*/i
+describe    BR_BRINDE_SUBJ      BRINDES
+score       BR_BRINDE_SUBJ      4
 
-header BR_BRINDE_SUBJ Subject =~ /.*brindes?.*/i
-describe BR_BRINDE_SUBJ   BRINDES
-score BR_BRINDE_SUBJ 4
+header      BR_COTANDO_ON_SUBJ  Subject =~ /.*cotando\sonline.*/i
+describe    BR_COTANDO_ON_SUBJ  COTANDO ONLINE
+score       BR_COTANDO_ON_SUBJ  20
 
-header BR_COTANDO_ONLINE_SUBJ Subject =~ /.*cotando\sonline.*/i
-describe BR_COTANDO_ONLINE_SUBJ   COTANDO ONLINE
-score BR_COTANDO_ONLINE_SUBJ 20
+header      BR_COTE_SEGURO_SUBJ Subject =~ /.*cote\s(o\s)?seguro.*/i
+describe    BR_COTE_SEGURO_SUBJ COTANDO SEGURO
+score       BR_COTE_SEGURO_SUBJ 20
 
-header BR_COTE_SEGURO_SUBJ Subject =~ /.*cote\s(o\s)?seguro.*/i
-describe BR_COTE_SEGURO_SUBJ   COTANDO SEGURO
-score BR_COTE_SEGURO_SUBJ 20
+header      BR_ECONOMIA_SUBJ    Subject =~ /.*economia.*/i
+describe    BR_ECONOMIA_SUBJ    ECONOMIA
+score       BR_ECONOMIA_SUBJ    4
 
-header BR_ECONOMIA_SUBJ Subject =~ /.*economia.*/i
-describe BR_ECONOMIA_SUBJ   ECONOMIA
-score BR_ECONOMIA_SUBJ 4
+header      BR_ESPIA_SUBJ       Subject =~ /.*espi[ãa].*/i
+describe    BR_ESPIA_SUBJ       ESPIA
+score       BR_ESPIA_SUBJ       5
 
-header BR_ESPIA_SUBJ Subject =~ /.*espi[ãa].*/i
-describe BR_ESPIA_SUBJ   ESPIA
-score BR_ESPIA_SUBJ 5
+header      BR_LAMPADA_SUBJ     Subject =~ /.*lampada.*/i
+describe    BR_LAMPADA_SUBJ     LAMPADA
+score       BR_LAMPADA_SUBJ     3
 
-header BR_LAMPADA_SUBJ Subject =~ /.*lampada.*/i
-describe BR_LAMPADA_SUBJ   LAMPADA
-score BR_LAMPADA_SUBJ 3
+header      BR_SUA_CASA_SUBJ    Subject =~ /.*sua\scasa.*/i
+describe    BR_SUA_CASA_SUBJ    SUA CASA
+score       BR_SUA_CASA_SUBJ    8
 
-header BR_SUA_CASA_SUBJ Subject =~ /.*sua\scasa.*/i
-describe BR_SUA_CASA_SUBJ   SUA CASA
-score BR_SUA_CASA_SUBJ 8
+header      BR_CONVENIO_SUBJ    Subject =~ /.*conv[eê]nio.*/i
+describe    BR_CONVENIO_SUBJ    CONVENIO
+score       BR_CONVENIO_SUBJ    3
 
-header BR_CONVENIO_SUBJ Subject =~ /.*conv[eê]nio.*/i
-describe BR_CONVENIO_SUBJ   CONVENIO
-score BR_CONVENIO_SUBJ 3
+header      BR_PLANO_SEG_SUBJ   Subject =~ /.*o\svalor\sdo\sseu\splano\sde\ssa.{1,2}de\s.{1,2}\ssegundos?(\.)?/i
+describe    BR_PLANO_SEG_SUBJ   PLANO DE SAUDE
+score       BR_PLANO_SEG_SUBJ   30
 
-header BR_PLANO_SEGUNDOS_SUBJ Subject =~ /.*o\svalor\sdo\sseu\splano\sde\ssa.{1,2}de\s.{1,2}\ssegundos?(\.)?/i
-describe BR_PLANO_SEGUNDOS_SUBJ   PLANO DE SAUDE
-score BR_PLANO_SEGUNDOS_SUBJ 30
+header      BR_SEGURO_CAR_SUBJ  Subject =~ /.*o\svalor\sdo\sseguro\sdo\sseu\scarro\sem\s.{1,2}\ssegundos?(\.)?/i
+describe    BR_SEGURO_CAR_SUBJ  SEGURO CARRO
+score       BR_SEGURO_CAR_SUBJ  30
 
-header BR_SEGURO_CARRO_SUBJ Subject =~ /.*o\svalor\sdo\sseguro\sdo\sseu\scarro\sem\s.{1,2}\ssegundos?(\.)?/i
-describe BR_SEGURO_CARRO_SUBJ   SEGURO CARRO
-score BR_SEGURO_CARRO_SUBJ 30
+header      BR_PUBLICIDADE_SUBJ Subject =~ /.*publicidade.*/i
+describe    BR_PUBLICIDADE_SUBJ PUBLICIDADE
+score       BR_PUBLICIDADE_SUBJ 4
 
-header BR_PUBLICIDADE_SUBJ Subject =~ /.*publicidade.*/i
-describe BR_PUBLICIDADE_SUBJ   PUBLICIDADE
-score BR_PUBLICIDADE_SUBJ 4
+header      BR_SULAMERICA_SUBJ  Subject =~ /.*sulamerica.*/i
+describe    BR_SULAMERICA_SUBJ  SULAMERICA
+score       BR_SULAMERICA_SUBJ  7
 
-header BR_SULAMERICA_SUBJ Subject =~ /.*sulamerica.*/i
-describe BR_SULAMERICA_SUBJ   SULAMERICA
-score BR_SULAMERICA_SUBJ 7
+header      BR_PORTO_SEG_SUBJ   Subject =~ /.*porto\sseguro.*/i
+describe    BR_PORTO_SEG_SUBJ   PORTO SEGURO
+score       BR_PORTO_SEG_SUBJ   7
 
-header BR_PORTO_SEGURO_SUBJ Subject =~ /.*porto\sseguro.*/i
-describe BR_PORTO_SEGURO_SUBJ   PORTO SEGURO
-score BR_PORTO_SEGURO_SUBJ 7
+header      BR_VOCE_TEM_SUBJ    Subject =~ /.*voc[eê]\stem.*/i
+describe    BR_VOCE_TEM_SUBJ    VOCE TEM
+score       BR_VOCE_TEM_SUBJ    3
 
-header BR_VOCE_TEM_SUBJ Subject =~ /.*voc[eê]\stem.*/i
-describe BR_VOCE_TEM_SUBJ   VOCE TEM
-score BR_VOCE_TEM_SUBJ 3
+header      BR_PROPOSTA_SUBJ    Subject =~ /.*proposta.*/i
+describe    BR_PROPOSTA_SUBJ    PROPOSTA
+score       BR_PROPOSTA_SUBJ    3
 
-header BR_PROPOSTA_SUBJ Subject =~ /.*proposta.*/i
-describe BR_PROPOSTA_SUBJ   PROPOSTA
-score BR_PROPOSTA_SUBJ 3
+header      BR_RECEITAS_SUBJ    Subject =~ /.*receitas?.*/i
+describe    BR_RECEITAS_SUBJ    receitas
+score       BR_RECEITAS_SUBJ    5
 
-header BR_RECEITAS_SUBJ Subject =~ /.*receitas?.*/i
-describe BR_RECEITAS_SUBJ   receitas
-score BR_RECEITAS_SUBJ 5
+header      BR_COMIDA_SUBJ      Subject =~ /.*comida?.*/i
+describe    BR_COMIDA_SUBJ      COMIDA
+score       BR_COMIDA_SUBJ      5
 
-header BR_COMIDA_SUBJ Subject =~ /.*comida?.*/i
-describe BR_COMIDA_SUBJ   COMIDA
-score BR_COMIDA_SUBJ 5
+header      BR_PESQUISADOR_SUBJ Subject =~ /.*pesquisador(es)?.*/i
+describe    BR_PESQUISADOR_SUBJ PESQUISADORES
+score       BR_PESQUISADor_SUBJ 5
 
-header BR_PESQUISADORES_SUBJ Subject =~ /.*pesquisador(es)?.*/i
-describe BR_PESQUISADORES_SUBJ   PESQUISADORES
-score BR_PESQUISADORES_SUBJ 5
+header      BR_SAUDE2_SUBJ	    Subject =~ /.*(Albert\sEinstein|Sírio\sLibanês).*/i
+describe    BR_SAUDE2_SUBJ      Albert einstein
+score       BR_SAUDE2_SUBJ      15	
+
+header      BR_CORREIOS_SUBJ	Subject =~ /.*Informe-Correios.*/i
+describe    BR_CORREIOS_SUBJ	correios fake
+score       BR_CORREIOS_SUBJ	10
+
+header		BR_CONCORRER_SUBJ	Subject =~ /.*concorr(er|a).*/i
+describe	BR_CONCORRER_SUBJ	promocao
+score		BR_CONCORRER_SUBJ	10
+
+header		BR_TICKET_SUBJ		Subject =~ /.*ticket.*/i
+describe	BR_TICKET_SUBJ		ticket
+score		BR_TICKET_SUBJ		6
+
+header		BR_NATURAL_SUBJ		Subject =~ /.*(natural|Insatisfeito).*/i
+describe	BR_NATURAL_SUBJ		natural/Insatisfeito		
+score		BR_NATURAL_SUBJ		3
+
+header		BR_SAUDE3_SUBJ		Subject =~ /.*(Plano\sde\sSa(ú|u)de|Bradesco\sSaúde).*/i
+describe	BR_SAUDE3_SUBJ		plan saude
+score		BR_SAUDE3_SUBJ		10
+
+header		BR_VINHO_SUBJ		Subject =~ /.*(wine|vinho|vinhos).*/i
+describe	BR_VINHO_SUBJ		vinhos
+score		BR_VINHO_SUBJ		10
+
+header		BR_PENIS_SUBJ		Subject =~ /.*(seu\spau|seu\spinto|p(ê|e)nis).*/i
+describe	BR_PENIS_SUBJ		PAU/PINTO
+score		BR_PENIS_SUBJ		20
+
+header		BR_ERECOES_SUBJ	    Subject =~ /.*(ere(ç|c)(õ|o)es|ere(ç|c)(ã|a)o|estimulante|sexual).*/i
+describe	BR_ERECOES_SUBJ	    ERECOES
+score		BR_ERECOES_SUBJ	    8
+
+header		BR_LIMPE_NOME_SUBJ	Subject =~ /.*limpe\sseu\snome.*/i
+describe	BR_LIMPE_NOME_SUBJ	limpar o nome
+score		BR_LIMPE_NOME_SUBJ	10
+
+header		BR_TRANSA_SUBJ    	Subject =~ /.*transa\s(de|com).*/i
+describe	BR_TRANSA_SUBJ    	MELHOR TRANSA
+score		BR_TRANSA_SUBJ    	20
+
+header		BR_DISFUNCAO_SUBJ   Subject =~ /.*disfun[cç][ãa]o\ser[eé]til.*/i
+describe	BR_DISFUNCAO_SUBJ   DISFUNÃO ERÉTIL
+score		BR_DISFUNCAO_SUBJ   20
+
+header		BR_IMPORTADOS_SUBJ  Subject =~ /.*importados.*/i
+describe	BR_IMPORTADOS_SUBJ  importados
+score		BR_IMPORTADOS_SUBJ  4
+
+header		BR_EJACULAR_SUBJ    Subject =~ /.*ejacular.*/i
+describe	BR_EJACULAR_SUBJ    ejacular
+score		BR_EJACULAR_SUBJ    4
+
+header		BR_ERETO_SUBJ       Subject =~ /.*ereto.*/i
+describe	BR_ERETO_SUBJ       ereto
+score		BR_ERETO_SUBJ       4
+
+header		BR_IMAGINE_VC_SUBJ  Subject =~ /.*imagine\svoc[êe].*/i
+describe	BR_IMAGINE_VC_SUBJ  MAGINE VOCE
+score		BR_IMAGINE_VC_SUBJ  7
+
+header		BR_LEADS_SUBJ       Subject =~ /.*leads.*/i
+describe	BR_LEADS_SUBJ       LEADS
+score		BR_LEADS_SUBJ       7
+
+header		BR_CANAIS_SUBJ      Subject =~ /.*mais\sde.*canais.*hd.*/i
+describe	BR_CANAIS_SUBJ      MAIS DE TANTOS CANAIS
+score		BR_CANAIS_SUBJ      10
+
+header		BR_FULL_HD_SUBJ     Subject =~ /.*full(\s)?hd.*/i
+describe	BR_FULL_HD_SUBJ     FULL HD
+score		BR_FULL_HD_SUBJ     7
+
+header		BR_4K_SUBJ          Subject =~ /.*4K.*/
+describe	BR_4K_SUBJ          4k
+score		BR_4K_SUBJ          3
+
+header		BR_CANAIS2_SUBJ     Subject =~ /.*1\.400\scanais.*/i
+describe	BR_CANAIS2_SUBJ     1400 CANAIS
+score		BR_CANAIS2_SUBJ     20
+
+header		BR_DORES_SUBJ       Subject =~ /.*(dores\sno\scorpo|press[ãa]o\salta).*/i
+describe	BR_DORES_SUBJ       DORES NO CORPO PRESSAO ALTA
+score		BR_DORES_SUBJ       5
+
+header		BR_MASSAGEM_SUBJ    Subject =~ /.*massagem\sdigital.*/i
+describe	BR_MASSAGEM_SUBJ    MASSAGEM DIGITAL
+score		BR_MASSAGEM_SUBJ    20
+
+header		BR_CONHECER_SUBJ    Subject =~ /.*voc[eê]\sprecisa\sconhecer.*/i
+describe	BR_CONHECER_SUBJ    VOCE PRECISA CONHECER
+score		BR_CONHECER_SUBJ    7
+
+header		BR_VAI_VOCE_SUBJ    Subject =~ /[cC]omo\svai\svoc[êe](\!\.)?/
+describe	BR_VAI_VOCE_SUBJ    COMO VAI VOCE
+score		BR_VAI_VOCE_SUBJ    12
+
+header		BR_FUNCIONARIO_SUBJ Subject =~ /.*precisamos\sde\sfuncionarios?.*/i
+describe	BR_FUNCIONARIO_SUBJ PRECISAMOS DE FUNCIONARIOS
+score		BR_FUNCIONARIO_SUBJ 7
+
+header		BR_SEGURO_AUTO_SUBJ Subject =~ /.*seguro\sauto.*/i
+describe	BR_SEGURO_AUTO_SUBJ SEGURO AUTO
+score		BR_SEGURO_AUTO_SUBJ 20  
