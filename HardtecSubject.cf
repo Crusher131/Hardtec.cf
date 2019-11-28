@@ -467,11 +467,11 @@ header      BR_COTANDO_ON_SUBJ  Subject =~ /.*cotando\sonline.*/i
 describe    BR_COTANDO_ON_SUBJ  COTANDO ONLINE
 score       BR_COTANDO_ON_SUBJ  20
 
-header      BR_COTE_SEGURO_SUBJ Subject =~ /.*cote\s(o\s)?seguro.*/i
+header      BR_COTE_SEGURO_SUBJ Subject =~ /.*cote\s(o\s)?(seu\s)?seguro.*/i
 describe    BR_COTE_SEGURO_SUBJ COTANDO SEGURO
 score       BR_COTE_SEGURO_SUBJ 20
 
-header      BR_ECONOMIA_SUBJ    Subject =~ /.*economia.*/i
+header      BR_ECONOMIA_SUBJ    Subject =~ /.*(economia|economize).*/i
 describe    BR_ECONOMIA_SUBJ    ECONOMIA
 score       BR_ECONOMIA_SUBJ    4
 
@@ -638,3 +638,19 @@ score		BR_FUNCIONARIO_SUBJ 7
 header		BR_SEGURO_AUTO_SUBJ Subject =~ /.*seguro\sauto.*/i
 describe	BR_SEGURO_AUTO_SUBJ SEGURO AUTO
 score		BR_SEGURO_AUTO_SUBJ 20  
+
+header		BR_PROP_EXC_SUBJ    Subject =~ /.*proposta\sexclusiva.*/i
+describe	BR_PROP_EXC_SUBJ    PROPOSTA EXCLUSICA
+score		BR_PROP_EXC_SUBJ    3
+
+header		BR_COTE_EM_SUBJ     Subject =~ /.*cote\sem\sat[ée].*/i
+describe	BR_COTE_EM_SUBJ     COTE EM ATE
+score		BR_COTE_EM_SUBJ     20  
+
+header		BR_AUMENTE_SUBJ     Subject =~ /.*aumente\sseu\sfaturamento.*/i
+describe	BR_AUMENTE_SUBJ     AUMENTE SEU FATURAMENTO
+score		BR_AUMENTE_SUBJ     4
+
+header		BR_NEGATIVADO_SUBJ  Subject =~ /.*(cpf\s)?(ou\s)?(cnpj\s)?netativado\?/i
+describe	BR_NEGATIVADO_SUBJ  CPF OU CNPJ NEGATIVADO
+score		BR_NEGATIVADO_SUBJ  20 
