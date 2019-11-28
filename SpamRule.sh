@@ -20,14 +20,12 @@
 log="/var/log/spamrule.log"
 subjectrule="/etc/mail/spamassassin/HardtecSubject.cf"
 bodyrule="/etc/mail/spamassassin/HardtecBody.cf"
-service=MailScanner
 subjectdownloaded="/tmp/HardtecSubject.cf"
 bodydownloaded="/tmp/HardtecBody.cf"
 wgetsubject="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
 wgetbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
 paramwget=" --directory-prefix=/tmp/ -q --no-check-certificate"
-retorno=0
-SOversion=$(cat /etc/redhat-release | grep -Eo '[6-7]{1}')
+getfile="/usr/bin/wget"
 
 #Função responsavel pelo Log
 Log(){
@@ -38,25 +36,12 @@ Log(){
     fi | tee -a "$log"
 }
 
-#Função responsavel por reiniciar o serviço do MailScanner
-# MailerRestart(){
-#     if [ $bodyvalue -eq 1 ] || [ $subjectvalue -eq 1 ]; then
-#         if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 )); then
-#             service MailScanner restart
-#         else
-#             service mailscanner restart
-#         fi
-#         echo "Serviços do MailScanner reiniciados"
-#     fi
-# }
-
 MailerRestart(){
-    if [ $bodyvalue -eq 1 ] || [ $subjectvalue -eq 1 ]; then
-        if [ $SOversion -eq 7 ]; then
-            service mailscanner restart
-        else
+    service mailscanner restart
+    restart=$?
+
+    if [ $restart != 0 ]; then
             service MailScanner restart
-        fi
     fi
 }
 
@@ -70,7 +55,7 @@ MailerRestart
 
 #Função responsavel por checar os arquivos Baixados
 CopyFiles2() {
-    if [ $bodyvalue -eq 1 ]; then
+    if [ "$bodyvalue" -eq 1 ]; then
         echo ""
         echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
         cp -f $bodydownloaded $bodyrule
@@ -83,13 +68,13 @@ CopyFiles2() {
 
 #Função responsavel por checar os arquivos Baixados
 CopyFiles() {
-    if [ $subjectvalue -eq 1 ]; then
-    echo ""
-    echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
-    cp -f $subjectdownloaded $subjectrule
+    if [ "$subjectvalue" -eq 1 ]; then
+        echo ""
+        echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
+        cp -f $subjectdownloaded $subjectrule
     else
-    echo ""
-    echo "Arquivo $subjectrule é igual ao $subjectdownloaded nenhuma ação foi tomada"
+        echo ""
+        echo "Arquivo $subjectrule é igual ao $subjectdownloaded nenhuma ação foi tomada"
     fi
     CopyFiles2
 }
@@ -105,7 +90,7 @@ comparatefile() {
 
 #Função responsavel por efetuar a checagem da existencia dos arquivos
 CheckBody() {
-    if [ -f $bodyrule ]; then
+    if [ -f "$bodyrule" ]; then
         echo "O arquivo $bodyrule existe"
     else
         echo "O arquivo $bodyrule não existe, criando o arquivo"
@@ -118,7 +103,7 @@ CheckBody() {
 
 #Função responsavel por efetuar a checagem da existencia dos arquivos
 CheckSub() {
-    if [ -f $subjectrule ]; then
+    if [ -f "$subjectrule" ]; then
         echo "O arquivo $subjectrule existe, prosseguindo com a checagem do arquivo $bodyrule"
     else
         echo "O arquivo $subjectrule não existe, criando o arquivo"
@@ -132,6 +117,11 @@ CheckSub() {
 #Função Inicial!
 FuncInicial(){
     echo "" > $log
+    if [ -f "$getfile" ]; then
+        echo "existe"
+    else
+        yum install wget -y
+    fi    
     echo "Iniciando atualização das regras anti-spam"
     echo ""
     echo "Iniciando download do arquivo de regras no assunto"
@@ -143,8 +133,8 @@ FuncInicial(){
     echo ""
     echo "Download finalizado"
     echo ""
-    echo "Verificando se "$subjectrule" existe"
+    echo "Verificando se $subjectrule existe"
     CheckSub 
 }
 
-FuncInicial 2>&1 | Log
+FuncInicial 2>&1 | Log "$@"
