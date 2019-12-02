@@ -17,18 +17,17 @@
 #########################################################################################################################################
 
 # Variaveis
+rules='
+HardtecSubject.cf
+HardtecBody.cf
+HardtecFrom.cf
+'
 log="/var/log/spamrule.log"
-subjectrule="/etc/mail/spamassassin/HardtecSubject.cf"
-bodyrule="/etc/mail/spamassassin/HardtecBody.cf"
-subjectdownloaded="/tmp/HardtecSubject.cf"
-bodydownloaded="/tmp/HardtecBody.cf"
-wgetsubject="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecSubject.cf"
-wgetbody="https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/HardtecBody.cf"
 paramwget=" --directory-prefix=/tmp/ -q --no-check-certificate"
 getfile="/usr/bin/wget"
 
 #Função responsavel pelo Log
-Log(){
+Func.Log(){
     if [ -z "$1" ]; then
         cat
     else
@@ -36,105 +35,93 @@ Log(){
     fi | tee -a "$log"
 }
 
-MailerRestart(){
+Func.Restart(){
     service mailscanner restart
     restart=$?
 
     if [ $restart != 0 ]; then
             service MailScanner restart
     fi
+    Func.Remove
 }
 
 #Função responsavel por limpar os arquivos baixados
-RemoveFiles() {
-    rm -rfv $bodydownloaded
-    echo ""
-    rm -rfv $subjectdownloaded
-MailerRestart
+Func.Remove() {
+    for rule in $rules; do
+    echo "Removendo arquivo temporario $rule"
+    rm -rfv /tmp/$rule
+    done
 }
 
 #Função responsavel por checar os arquivos Baixados
-CopyFiles2() {
-    if [ "$bodyvalue" -eq 1 ]; then
-        echo ""
-        echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
-        cp -f $bodydownloaded $bodyrule
-    else
-        echo ""
-        echo "Arquivo $bodyrule é igual ao $bodydownloaded nenhuma ação foi tomada"
-    fi
-    RemoveFiles
-}
-
-#Função responsavel por checar os arquivos Baixados
-CopyFiles() {
-    if [ "$subjectvalue" -eq 1 ]; then
-        echo ""
-        echo "Subistituindo Arquivo $subjectrule por $subjectdownloaded"
-        cp -f $subjectdownloaded $subjectrule
-    else
-        echo ""
-        echo "Arquivo $subjectrule é igual ao $subjectdownloaded nenhuma ação foi tomada"
-    fi
-    CopyFiles2
+Func.Copy() {
+    for rule in $rules; do
+        cp -f /tmp/"$rule" /etc/mail/spamassassin/"$rule"
+    done
+    Func.Restart
 }
 
 #Função responsavel por comparar os arquivos baixados com os atualmente ultilizados
-comparatefile() {
-    diff --brief $subjectdownloaded $subjectrule >/dev/null
-    subjectvalue=$?
-    diff --brief $bodydownloaded $bodyrule >/dev/null
-    bodyvalue=$?
-    CopyFiles
+Func.Comp() {
+    for rule in $rules; do
+    echo "$rule"
+        if  ! diff --brief /tmp/$rule /etc/mail/spamassassin/$rule >/dev/null; then
+            Func.Copy
+            return 1
+        fi
+    done
+        Func.Remove
 }
 
 #Função responsavel por efetuar a checagem da existencia dos arquivos
-CheckBody() {
-    if [ -f "$bodyrule" ]; then
-        echo "O arquivo $bodyrule existe"
+Func.Check() {
+    for rule in $rules; do
+    if [ -f "/etc/mail/spamassassin/$rule" ]; then
+        echo "O arquivo $rule existe."
     else
-        echo "O arquivo $bodyrule não existe, criando o arquivo"
+        echo "O arquivo $rule não existe, criando o arquivo"
         echo ""
-        touch $bodyrule
-        echo "Arquivo $bodyrule criado"
-    fi    
-    comparatefile
-}
-
-#Função responsavel por efetuar a checagem da existencia dos arquivos
-CheckSub() {
-    if [ -f "$subjectrule" ]; then
-        echo "O arquivo $subjectrule existe, prosseguindo com a checagem do arquivo $bodyrule"
-    else
-        echo "O arquivo $subjectrule não existe, criando o arquivo"
-        echo ""
-        touch $subjectrule
-        echo "Arquivo $subjectrule criado, prosseguindo com a checagem do arquivo $bodyrule"
+        touch /etc/mail/spamassassin/$rule
+        echo "Arquivo $rule criado."
     fi
-    CheckBody
+    done
+    Func.Comp 
+}
+
+#Função do crontab
+Func.Cron(){
+    if [ -f "/scripts/SpamRule.sh" ]; then
+    echo ""
+    else
+        touch /scripts/SpamRule.sh
+    fi
+    wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/SpamRule.sh
+    if  ! grep -F "0 * * * * root /scripts/spamrule.sh" /etc/crontab; then
+        echo "0 * * * * root /scripts/spamrule.sh" >> /etc/crontab
+    fi
+    if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
+        cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
+        chmod +x /scripts/SpamRule.sh
+    fi
+Func.Init
 }
 
 #Função Inicial!
-FuncInicial(){
-    echo "" > $log
+Func.Init(){
+    echo ""
     if [ -f "$getfile" ]; then
-        echo "existe"
+    echo ''
     else
         yum install wget -y
     fi    
     echo "Iniciando atualização das regras anti-spam"
     echo ""
-    echo "Iniciando download do arquivo de regras no assunto"
-    wget $paramwget $wgetsubject
-    echo ""
+    for rule in $rules; do
+    echo "Iniciando download do arquivo de regras $rule"
+    wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/$rule
     echo "Download finalizado"
-    echo "Iniciando download do arquivo de regras no corpo"
-    wget $paramwget $wgetbody
-    echo ""
-    echo "Download finalizado"
-    echo ""
-    echo "Verificando se $subjectrule existe"
-    CheckSub 
+    done
+    Func.Check
 }
 
-FuncInicial 2>&1 | Log "$@"
+Func.Cron 2>&1 | Func.Log "$@"
