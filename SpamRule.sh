@@ -96,8 +96,8 @@ Func.Cron(){
         touch /scripts/SpamRule.sh
     fi
     wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/SpamRule.sh
-    if  ! grep -F "0 * * * * root /scripts/spamrule.sh" /etc/crontab; then
-        echo "0 * * * * root /scripts/spamrule.sh" >> /etc/crontab
+    if  ! grep -F "0 * * * * root /scripts/SpamRule.sh" /etc/crontab; then
+        echo "0 * * * * root /scripts/SpamRule.sh" >> /etc/crontab
     fi
     if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
         cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
