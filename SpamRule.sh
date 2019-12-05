@@ -103,6 +103,7 @@ Func.Cron(){
         cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
         chmod +x /scripts/SpamRule.sh
     fi
+    rm -rfv /tmp/SpamRule.sh
 Func.Init
 }
 
