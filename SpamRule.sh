@@ -51,6 +51,7 @@ Func.Remove() {
     echo "Removendo arquivo temporario $rule"
     rm -rfv /tmp/$rule
     done
+    return 1
 }
 
 #Função responsavel por checar os arquivos Baixados
@@ -88,25 +89,6 @@ Func.Check() {
     Func.Comp 
 }
 
-#Função do crontab
-Func.Cron(){
-    if [ -f "/scripts/SpamRule.sh" ]; then
-    echo ""
-    else
-        touch /scripts/SpamRule.sh
-    fi
-    wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/SpamRule.sh
-    if  ! grep -F "0 * * * * root /scripts/SpamRule.sh" /etc/crontab; then
-        echo "0 * * * * root /scripts/SpamRule.sh" >> /etc/crontab
-    fi
-    if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
-        cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
-        chmod +x /scripts/SpamRule.sh
-    fi
-    rm -rfv /tmp/SpamRule.sh
-Func.Init
-}
-
 #Função Inicial!
 Func.Init(){
     echo ""
@@ -123,6 +105,25 @@ Func.Init(){
     echo "Download finalizado"
     done
     Func.Check
+}
+
+#Função do crontab
+Func.Cron(){
+    if [ -f "/scripts/SpamRule.sh" ]; then
+    echo ""
+    else
+        touch /scripts/SpamRule.sh
+    fi
+    wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/SpamRule.sh
+    if  ! grep -F "30 20 * * * root /scripts/SpamRule.sh >/dev/null 2>&1" /etc/crontab; then
+        echo "30 20 * * * root /scripts/SpamRule.sh >/dev/null 2>&1" >> /etc/crontab
+    fi
+    if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
+        cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
+        chmod +x /scripts/SpamRule.sh
+    fi
+    rm -rfv /tmp/SpamRule.sh
+Func.Init
 }
 
 Func.Cron 2>&1 | Func.Log "$@"
