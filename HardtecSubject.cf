@@ -79,7 +79,7 @@ header  BR_APROVADO_SUBJ    Subject =~ /.*aprovado.*/i
 describe    BR_APROVADO_SUBJ    aprovado
 score   BR_APROVADO_SUBJ    2
 
-header  BR_AGORA_JA_SUBJ    Subject =~ /.*(agora|j(á|a)).*/i
+header  BR_AGORA_JA_SUBJ    Subject =~ /.*(agora|j(á|a)(\s|\.|\?|\!|\,|\:)).*/i
 describe    BR_AGORA_JA_SUBJ    agora|já
 score   BR_AGORA_JA_SUBJ    3
 

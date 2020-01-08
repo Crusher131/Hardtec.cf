@@ -1,24 +1,47 @@
 header		FROM_SAUDE	From =~ /.*saude\.us$/i
-describe	FROM_SAUDE	saude
-score		FROM_SAUDE	10
+score		FROM_SAUDE	20
 
 header	FROM_SAUDE2	From =~	/(saude-|-saude).*/i
-score	FROM_SAUDE2	10
+score	FROM_SAUDE2	20
 
-header	FROM_BARATO	From =~	/barato/i
-score	FROM_BARATO	10
+header	FROM_BARATO	From =~	/.*barato.*/i
+score	FROM_BARATO	20
 
-header	FROM_POSGRA	From =~	/posgraduacao/i
-score	FROM_POSGRA	10
+header	FROM_POSGRA	From =~	/.*posgraduacao.*/i
+score	FROM_POSGRA	20
 	
 header	FROM_CARTAO	From =~	/cartaovirtual/i
-score	FROM_CARTAO	10
+score	FROM_CARTAO	30
 
 header	FROM_PRODUTORA	From =~	/produtora\.net\.br/i
-score	FROM_PRODUTORA	10
+score	FROM_PRODUTORA	30
 
 header	FROM_XLZ	From =~	/(\.xyz|\.top|\.fun)$/i
-score	FROM_XLZ	10
+score	FROM_XLZ	100
 
 header	FROM_RESPONSER	From =~	/.*responser.*\.com\.br/i
 score	FROM_RESPONSER	10
+
+header	FROM_LEADS	From =~	/.*leads.*/i
+score	FROM_LEADS	30
+
+header	FROM_COTEPLANO	From =~	/.*coteplano.*/i
+score	FROM_COTEPLANO	30
+
+header FROM_MOBI    From =~ /.*\.mobi.*/i
+score FROM_MOBI     30
+
+header FROM_SPAM From =~ /.*(belbl|bmasts|comaste|ingblac|scortckyn).*/i
+score FROM_SPAM  30
+
+header FROM_WE_BS From =~ /.*\.we.bs.*/i
+score FROM_WE_BS  30
+
+header FROM_MTAFUNIL From =~ /.*mtafunil.co.*/i
+score FROM_MTAFUNIL 30
+
+header FROM_COMERCIOLEGAIS From =~ /.*comerciolegais.com.*/i
+header FROM_COMERCIOLEGAIS 30
+
+header FROM_ASSESSORIAJUD From =~ /.*assessoriajud.com.*/i
+header FROM_ASSESSORIAJUD 30
