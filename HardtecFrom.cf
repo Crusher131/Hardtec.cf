@@ -70,7 +70,7 @@ score FROM_GOLDEN 30
 header FROM_CC From =~ /.*@.*\.cc/
 score FROM_CC 30
 
-header FROM_COLETA_INDU From =~ /@coletaindustrial.*\.co/
+header FROM_COLETA_INDU From =~ /\@coletaindustrial.*\.co/
 score FROM_COLETA_INDU 30
 
 header FROM_DESCONTOSAUDE From =~ /.*descontosaude.*/
@@ -79,7 +79,7 @@ score FROM_DESCONTOSAUDE 30
 header FROM_ADMINISTRADORES From =~ /.*administradores\.com\.de/
 score FROM_ADMINISTRADORES 30
 
-header FROM_DIREITOS From =~ /.*@fisc.*\.direitos\-autorais\.de/
+header FROM_DIREITOS From =~ /.*\@fisc.*\.direitos\-autorais\.de/
 score FROM_DIREITOS 30
 
 header FROM_ACOPLASMAINOX From =~ /.*acoplasmainox\.com\.br/
