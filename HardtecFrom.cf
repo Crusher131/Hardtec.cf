@@ -102,3 +102,27 @@ score FROM_SAUDEWEB 30
 
 header FROM_CO From =~ /.*\.co$/
 score FROM_CO 30
+
+header FROM_VENDA_WHATS From =~ /\@vendapelowhats\.co/
+score FROM_VENDA_WHATS 30
+
+header FROM_PORTAL_TRIBUTARIO From =~ /(portaltributario\.com\.de|administradores\.com\.de)/
+score FROM_PORTAL_TRIBUTARIO 30
+
+header FROM_NUBANK From =~ /\.ww.*\.tech/
+score FROM_NUBANK 30
+
+header FROM_BRSHOW From =~ /brazilshow\.com\.br/
+score FROM_BRSHOW 30
+
+header FROM_EXTREME From =~ /.*puregui\.be/
+score FROM_EXTREME 30
+
+header FROM_CHEGOUU From =~ /.*chegouu\.com\.br/
+score FROM_CHEGOUU 30
+
+header FROM_HOUSEADMIN From =~ /.*houseadministrativo\.com\.de/
+score FROM_HOUSEADMIN 30
+
+header FROM_PROSTA From =~ /.*prostatghshgas\.us/
+score FROM_PROSTA 30
