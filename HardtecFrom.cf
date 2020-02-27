@@ -16,7 +16,7 @@ score	FROM_CARTAO	30
 header	FROM_PRODUTORA	From =~	/produtora\.net\.br/
 score	FROM_PRODUTORA	30
 
-header	FROM_XLZ	From =~	/(\.xyz|\.top|\.fun)$/
+header	FROM_XLZ	From =~	/.*(\.xyz|\.top|\.fun).*/
 score	FROM_XLZ	100
 
 header	FROM_RESPONSER	From =~	/.*responser.*\.com\.br/
@@ -130,6 +130,105 @@ score FROM_PROSTA 30
 header FROM_COTESAUDE From =~ /.*(cote|loca|desconto)saude\.co)/
 score FROM_COTESAUDE 30
 
-header FROM_MELHORESCADEIRAS From =~ /.*(bielapar.com.br|bristol.we.bs|canaldeoleo.com.br|clameaqui.we.bs|desenhandosaude.we.bs|ereats.com.br|hsamaria.com.br|monefull.we.bs|stumpf.we.bs|supernardelli.com.br|terracloud.we.bs)/
+header FROM_MELHORESCADEIRAS From =~ /.*(bielapar\.com\.br|bristol\.we\.bs|canaldeoleo\.com\.br|clameaqui\.we\.bs|desenhandosaude\.we\.bs|ereats\.com\.br|hsamaria\.com\.br|monefull\.we\.bs|stumpf\.we\.bs|supernardelli\.com\.br|terracloud\.we\.bs)/
 score FROM_MELHORESCADEIRAS 30
 
+header FROM_SULAMERICA From =~ /.*(divulgacao\.actor|syspro\.inf\.br|ultra\.expert).*/
+score FROM_SULAMERICA 30
+
+header FROM_BALLY From =~ /.*bally\.com\.br.*/
+score FROM_BALLY 30
+
+header FROM_INOVAMARKETING From =~ /.*inovamarketing\.net\.br.*/
+score FROM_INOVAMARKETING 30
+
+header FROM_TERRANOT From =~ /.*terranoticia\.com\.br/
+score FROM_TERRANOT 30
+
+header FROM_AMOSTRA From =~ /.*amostra\.rio\.br.*/
+score FROM_AMOSTRA 30
+
+header FROM_RJNOVIDADE From =~ /.*rjnovidade\.com\.br/
+score FROM_RJNOVIDADE 30
+
+header FROM_VOCEPOA From =~ /.*voce\.poa\.br/
+score FROM_VOCEPOA 30
+
+header FROM_RENOVACNH From =~ /.*renovacnh\.com\.br.*/
+score FROM_RENOVACNH 30
+
+header FROM_SUACNH From =~ /.*suacnhrenovada\.com\.br.*/
+score FROM_SUACNH 30
+
+header FROM_CNH From =~ /.*(cnh\-solucoes\-agora\.store|cnh\-suspensa\-cassada\.xyz).*/
+score FROM_CNH 30
+
+header FROM_COMPRE From =~ /.*comprerapidonanet\.com\.br.*/
+score FROM_COMPRE 30
+
+header FROM_CUPONWEB From =~ /.*cupons\-web\.com\.br.*/
+score FROM_CUPONWEB 30
+
+header FROM_EMAIL From =~ /.*\.email/
+score FROM_EMAIL 30
+
+header FROM_EOFERTA From =~ /.*email\-da\-oferta\.com\.br.*/
+score FROM_EOFERTA 30
+
+header  FROM_HORADEAPRO From =~ /.*horadeaproveitar\.com\.br.*/
+score   FROM_HORADEAPRO 30
+
+header  FROM_SUACNH From =~ /.*suacnhrenovada\.com\.br.*/
+score   FROM_SUACNH 30
+
+header FROM_PROMOEMAIL From =~ /.*promocaoemail\.com.*/
+score FROM_PROMOEMAIL 30
+
+header FROM_CNHDENTRODALEI From =~ /.*resolvecnhdentrodalei\.com\.br.*/
+score FROM_CNHDENTRODALEI 30
+
+header FROM_OFERTASDESCONTOS From =~ /.*ofertas\-descontos\.info.*/
+score FROM_OFERTASDESCONTOS 30
+
+header FROM_SUPERNET From =~ /.*supernetshoppingb\.com\.br.*/
+score FROM_SUPERNET 30 
+
+header FROM_SUPEROFERTA From =~ /.*umasuperoferta\.com\.br.*/
+score FROM_SUPEROFERTA 30
+
+header FROM_VENDASMAGICAS From =~ /.*vendasmagicas\.com\.br.*/
+score FROM_VENDASMAGICAS 30 
+
+header FROM_CASSADASUSPENSA From =~ /.*cnh\-cassada\-suspensa\.xyz.*/
+score FROM_CASSADASUSPENSA 30
+
+header FROM_PRECOBAIXO From =~ /.*precobaixoagorab\.com\.br.*/
+score FROM_PRECOBAIXO 30
+
+header FROM_RESOLVECNHDENTRODALEI From =~ /.*resolvecnhdentrodalei\.com\.br.*/
+score FROM_RESOLVECNHDENTRODALEI 30
+
+header FROM_SUPERNOVEMBER From =~ /.*supernovember\.com.*/
+score FROM_SUPERNOVEMBER 30
+
+header FROM_DIADECOMP From =~ /.*diadecomp\.com.*/
+score FROM_DIADECOMP 30
+
+header FROM_NOVEMBERVIEW From =~ /.*novemberview\.com\.br.*/
+score FROM_NOVEMBERVIEW 30
+
+header FROM_VINOTECASUPER From =~ /.*vinotecasuper\.com.*/
+score FROM_VINOTECASUPER 30
+
+header FROM_CIAVINUS From =~ /.*ciavinus\.com.*/
+score FROM_CIAVINUS 30
+
+header FROM_SUPERFRIDAY From =~ /.*superfridayhoy\.com.*/
+score FROM_SUPERFRIDAY 30
+
+header FROM_COMPAVINUS From =~ /.*compavinus\.com.*/
+score FROM_COMPAVINUS 30
+
+header FROM_BRAVINO From =~ /.*bravino.com.br
+      7 modanew5.com.br
+      8 newsuper2.com.br

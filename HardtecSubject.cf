@@ -653,4 +653,4 @@ score		BR_AUMENTE_SUBJ     4
 
 header		BR_NEGATIVADO_SUBJ  Subject =~ /.*(cpf\s)?(ou\s)?(cnpj\s)?netativado\?/i
 describe	BR_NEGATIVADO_SUBJ  CPF OU CNPJ NEGATIVADO
-score		BR_NEGATIVADO_SUBJ  20 
+score		BR_NEGATIVADO_SUBJ  20
