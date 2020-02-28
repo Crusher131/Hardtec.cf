@@ -127,7 +127,7 @@ score FROM_HOUSEADMIN 30
 header FROM_PROSTA From =~ /.*prostatghshgas\.us/
 score FROM_PROSTA 30
 
-header FROM_COTESAUDE From =~ /.*(cote|loca|desconto)saude\.co)/
+header FROM_COTESAUDE From =~ /.*(cote|loca|desconto)saude\.co.*/
 score FROM_COTESAUDE 30
 
 header FROM_MELHORESCADEIRAS From =~ /.*(bielapar\.com\.br|bristol\.we\.bs|canaldeoleo\.com\.br|clameaqui\.we\.bs|desenhandosaude\.we\.bs|ereats\.com\.br|hsamaria\.com\.br|monefull\.we\.bs|stumpf\.we\.bs|supernardelli\.com\.br|terracloud\.we\.bs)/
