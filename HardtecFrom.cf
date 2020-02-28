@@ -175,7 +175,7 @@ score FROM_EMAIL 30
 header FROM_EOFERTA From =~ /.*email\-da\-oferta\.com\.br.*/
 score FROM_EOFERTA 30
 
-header  FROM_HORADEAPRO From =~ /.*horadeaproveitar\.com\.br.*/
+header  FROM_HORADEAPRO From =~ /.*horadeaproveitar\.com.*/
 score   FROM_HORADEAPRO 30
 
 header  FROM_SUACNH From =~ /.*suacnhrenovada\.com\.br.*/
@@ -187,7 +187,7 @@ score FROM_PROMOEMAIL 30
 header FROM_CNHDENTRODALEI From =~ /.*resolvecnhdentrodalei\.com\.br.*/
 score FROM_CNHDENTRODALEI 30
 
-header FROM_OFERTASDESCONTOS From =~ /.*ofertas\-descontos\.info.*/
+header FROM_OFERTASDESCONTOS From =~ /.*ofertas\-(descontos|otimas)\.info.*/
 score FROM_OFERTASDESCONTOS 30
 
 header FROM_SUPERNET From =~ /.*supernetshoppingb\.com\.br.*/
@@ -223,12 +223,62 @@ score FROM_VINOTECASUPER 30
 header FROM_CIAVINUS From =~ /.*ciavinus\.com.*/
 score FROM_CIAVINUS 30
 
-header FROM_SUPERFRIDAY From =~ /.*superfridayhoy\.com.*/
-score FROM_SUPERFRIDAY 30
-
 header FROM_COMPAVINUS From =~ /.*compavinus\.com.*/
 score FROM_COMPAVINUS 30
 
-header FROM_BRAVINO From =~ /.*bravino.com.br
-      7 modanew5.com.br
-      8 newsuper2.com.br
+header FROM_BRAVINO From =~ /.*bravino\.com\.br.*/
+score FROM_BRAVINO 30
+
+header FROM_MODANEW From =~ /.*modanew5\.com\.br.*/
+score FROM_MODANEW 30
+
+header FROM_NEWSUPER From =~ /.*newsuper[0123456789]\.com\.br.*/
+score FROM_NEWSUPER 30
+
+header FROM_NEGOCIOMF From =~ /.*negociomf\.com\.br.*/
+score FROM_NEGOCIOMF 30
+
+header FROM_IMPRENSARJ From =~ /.*imprensarj\.com\.br.*/
+score FROM_IMPRENSARJ 30
+
+header FROM_TELENOTICIA From =~ /.*telenoticia\.com\.br.*/
+score FROM_TELENOTICIA 30
+
+header FROM_LONDON From =~ /.*\@.*\.london.*/
+score FROM_LONDON 30
+
+header FROM_HOSTWINDSDNS From =~ /.*\.hostwindsdns\.com.*/
+score FROM_HOSTWINDSDNS 30
+
+header FROM_ACTOR From =~ /.*\@.*\.actor.*/
+score FROM_ACTOR 30
+
+header FROM_REGRUHOSTING From =~ /.*\.regruhosting\.ru.*/
+score FROM_REGRUHOSTING 30
+
+header FROM_COMPRERAPIDONANET From =~ /.*comprerapidonanet\.online.*/
+score FROM_COMPRERAPIDONANET 30
+
+header FROM_ECONOMIADEVERDADE From =~ /.*economiadeverdade\.info.*/
+score FROM_ECONOMIADEVERDADE 30
+
+header FROM_HORADEAPROVEITAR From =~ /.*horadeaproveitar\.com\.br.*/
+score FROM_HORADEAPROVEITAR 30
+
+header FROM_BEST From =~ /.*\@.*\.best.*/
+score FROM_BEST 30
+
+header FROM_MELHORESDICAS From =~ /.*melhores\-dicas\-por\-email\.store.*/
+score FROM_MELHORESDICAS 30
+
+header FROM_EMAILOFERTAS From =~ /.*emailcomasmelhoresofertas\.com.*/
+score FROM_EMAILOFERTAS 30
+
+header FROM_SUPERNETSHOPPING From =~ /super(netshopping|onlineshop|fridayhoy)\.(info|online|com|com\.br|br).*/
+score FROM_SUPERNETSHOPPING 30
+
+header FROM_PROALGO From =~ /.*pro(\-mobrasil|\-mo\-lista)\.store.*/
+score FROM_PROALGO 30
+
+header FROM_UMAPROMOCAOESPECIAL From =~ /.*umapromocaoespecial\.(info|com|com\.br|store).*/
+score FROM_UMAPROMOCAOESPECIAL 30
