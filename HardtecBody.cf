@@ -73,3 +73,79 @@ score    BR_MALADIRETA2         20
 rawbody  BR_ORCAMENTO         /Anexo\sor.{1}amento/i
 describe BR_ORCAMENTO         Anexo Orcamento
 score    BR_ORCAMENTO         4
+
+rawbody BR_FREE_MONEY /free\smoney/i
+score BR_FREE_MONEY 9
+
+rawbody BR_ROLEX /rolex/i
+score BR_ROLEX 9
+
+rawbody BR_REGALIS /regalis/i
+score BR_REGALIS 9
+
+rawbody BR_VICIOUS /vicious/i
+score BR_VICIOUS 9
+
+rawbody BR_NEUROLOGICAL /neurological/i
+score BR_NEUROLOGICAL 8
+
+rawbody BR_MICROSHIT /microshit/i
+score BR_MICROSHIT 9
+
+rawbody BR_FREEHAND /freehand/i
+score BR_FREEHAND 9
+
+rawbody BR_UROLOGY /urology/i
+score BR_UROLOGY 9
+
+rawbody BR_TIME_MAGAZINE /time\smagazine/i
+score BR_TIME_MAGAZINE 9
+
+rawbody BR_CASINO /casino/i
+score BR_CASINO 9
+
+rawbody BR_ENLARGEMENT /enlargement/i
+score BR_ENLARGEMENT 9
+
+rawbody BR_JUSTONECLICK /just\sone\sclick\!/i
+score BR_JUSTONECLICK 9
+
+rawbody BR_SAVEMONEY /save\smoney/i
+score BR_SAVEMONEY 30
+
+rawbody BR_ORALLOZENGE /oral\slozenge/i
+score BR_ORALLOZENGE 30
+
+rawbody BR_INFORMACOES /www\.informacoesonline\.com/i
+score BR_INFORMACOES 40
+
+rawbody BR_BUYVICODIN /buy vicondin/i
+score BR_BUYVICODIN 40
+
+rawbody BR_CORREIOSEXE /correios\.exe/i
+score BR_CORREIOSEXE 100
+
+rawbody BR_CARTAOEXE /cartao\.exe/
+score BR_CARTAOEXE 100
+
+rawbody BR_LOMNICEZS /ohre\.lomnicezs\.cz/i
+score BR_LOMNICEZS 30
+
+rawbody BR_REMOVOTODAS /removo\stoda\se\squalquer\snegativacao\sque\stenha\sem\sseu\snome/i
+score BR_REMOVOTODAS 30
+
+rawbody BR_SCRIPTTAG /(<!(--|[^>]*>).*){8}/
+score BR_SCRIPTTAG 200
+
+rawbody BR_SCRIPTTAG2 /^.*[a-z]<![a-z]*[0-9]*>[a-z]/
+score BR_SCRIPTTAG2 200
+
+rawbody BR_SCRIPTTAG3 /^.*[a-z]<!--[a-z]*[0-9]*-->[a-z]/
+score BR_SCRIPTTAG3 200
+
+rawbody BR_IFRAME /iframe src\=cid/
+score BR_IFRAME 200
+
+rawbody BR_IFRAME2 /iframe\ssrc\=cid/
+score BR_IFRAME2 200
+
