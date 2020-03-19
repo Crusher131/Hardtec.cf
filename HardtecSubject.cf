@@ -655,6 +655,10 @@ header		BR_NEGATIVADO_SUBJ  Subject =~ /.*(cpf\s)?(ou\s)?(cnpj\s)?netativado\?/i
 describe	BR_NEGATIVADO_SUBJ  CPF OU CNPJ NEGATIVADO
 score		BR_NEGATIVADO_SUBJ  20
 
-header      BR_BRADESCOSAUDE    Subject =~ /Bradesco\SSa.*de/i
+header      BR_BRADESCOSAUDE    Subject =~ /.*Bradesco\SSa.*de.*/i
 describe    BR_BRADESCOSAUDE    BRADESCO SAUDE
 score       BR_BRADESCOSAUDE    60
+
+header      BR_SPCSERASA        Subject =~ /.*SPC.*SERASA.*/
+describe    BR_SPCSERASA        SPC SERASA
+score       BR_SPCSERASA        60
