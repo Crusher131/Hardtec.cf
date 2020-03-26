@@ -304,7 +304,7 @@ score FROM_COTAR_AGORA 30
 header FROM_DESAFIOPOA From =~ /.*desafio\.(poa|com)(\.br).*/
 score FROM_DESAFIOPOA 30
 
-header FROM_DIA From =~ /.*dia(riovirtual|riodigital|doconsumidormaste)\.(com|cam)
+header FROM_DIA From =~ /.*dia(riovirtual|riodigital|doconsumidormaste)\.(com|cam).*/
 score FROM_DIA 30
 
 header FROM_DICASSEMANAIS From =~ /.*dicassemanais\.com\.br.*/
