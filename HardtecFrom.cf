@@ -282,3 +282,114 @@ score FROM_PROALGO 30
 
 header FROM_UMAPROMOCAOESPECIAL From =~ /.*umapromocaoespecial\.(info|com|com\.br|store).*/
 score FROM_UMAPROMOCAOESPECIAL 30
+
+header FROM_AMARKEGINT From =~ /.*a.markting.\.(com|online|site).*/
+score FROM_AMARKEGINT 30
+
+header FROM_CALVET From =~ /.*acalvet\.com*/
+score FROM_CALVET 30
+
+header FROM_AM_AR From =~ /.*\@.?.?(arjoflo(s|r)|ebr|wyr|fhd|mwqf?|tmir|promkt|x?pro|ack|marktings?|ikeecamping|alvet|bras|arelinsd|marktings?|msxls|\-newkt|ofertasmaior|promocoesclientes?|\-vendasmkt)\.(com|site|online|info)(\.br)?.*/
+score FROM_ACBRAS 30
+
+header FROM_COLCHAO From =~ /.*colchaoecolchoes\.com(\.br)?.*/
+score FROM_COLCHAO 30
+
+header FROM_2019 From =~ /.*(convites?|info)comendadoria2019\.com.*/
+score FROM_2019 30
+
+header FROM_COTAR_AGORA From =~ /.*cotar\-agora.*\.cam.*/
+score FROM_COTAR_AGORA 30
+
+header FROM_DESAFIOPOA From =~ /.*desafio\.(poa|com)(\.br).*/
+score FROM_DESAFIOPOA 30
+
+header FROM_DIA From =~ /.*dia(riovirtual|riodigital|doconsumidormaste)\.(com|cam)
+score FROM_DIA 30
+
+header FROM_DICASSEMANAIS From =~ /.*dicassemanais\.com\.br.*/
+score FROM_DICASSEMANAIS 30
+
+header FROM_F1000 From =~ /.*.1000\.com\.br.*/
+score FROM_F1000 30
+
+header FROM_INFOSEMANAL From =~ /.*informasemanal\.com\.br.*/
+score FROM_INFOSEMANAL 30
+
+header FROM_PLANOSAUDE From =~ /.*lifesul.*\.com\.br.*/
+score FROM_PLANOSAUDE 30
+
+header FROM_TOKIOMARINE From =~ /.*tokiomarine\.com\.br.*/
+score FROM_TOKIOMARINE 30
+
+header FROM_MALASDKK From =~ /.*malasdkk\.com.*/
+score FROM_MALASDKK 30
+
+header FROM_MEGASENA From =~ /.*megasemana.*/
+score FROM_MEGASENA 30
+
+header FROM_MULTIPLY From =~ /.*multiplyhomes\.com\.br.*/
+score FROM_MULTIPLY 30
+
+header FROM_MX2020 From =~ /.*mx2020\.info.*/
+score FROM_MX2020 30
+
+header FROM_NELCOMPONENTES From =~ /.*nelcomponentes.*/
+score FROM_NELCOMPONENTES 30
+
+header FROM_NOTICIARJ From =~ /.*noticiarj\.com\.br.*/
+score FROM_NOTICIARJ 30
+
+header FROM_NOTICIASNACIONAIS From =~ /.*noticiasnacionais\.com\.br.*/
+score FROM_NOTICIASNACIONAIS 30
+
+header FROM_OCIDENTALCOBRANCAS From =~ /.*ocidentalcobrancas\.store.*/
+score FROM_OCIDENTALCOBRANCAS 30
+
+header FROM_ORIGINALFILTER From =~ /.*originalfilter\.com.*/
+score FROM_ORIGINALFILTER 30
+
+header FROM_ROCKCONTENT From =~ /.*rockcontent\.com.*/
+score FROM_ROCKCONTENT 30
+
+header FROM_SEG_SAUDEPME From =~ /.*seg\-saudepme\.com\.br.*/
+score FROM_SEG_SAUDEPME 30
+
+header FROM_SERVICOSFCPORTO From =~ /.*servicosfcporto\.com.*/
+score FROM_SERVICOSFCPORTO 30
+
+header FROM_SIRDEX From =~ /.*sirdexs\.com.*/
+score FROM_SIRDEX 30
+
+header FROM_SJWLPO From =~ /.*sjwlpo\.bhz\.br.*/
+score FROM_SJWLPO 30
+
+header FROM_STONE From =~ /.*stone\.com.*/
+score FROM_STONE 30
+
+header FROM_SVSAUDE From =~ /.*svsaude\.poa\.br.*/
+score FROM_SVSAUDE 30
+
+header FROM_SYSPRO From =~ /.*syspro\.inf\.br.*/
+score FROM_SYSPRO 30
+
+header FROM_TICKETSCONGRESSOS From =~ /.*ticketscongressos\.com\.br.*/
+score FROM_TICKETSCONGRESSOS 30
+
+header FROM_TUDONOTICIA From =~ /.*tudonoticia\.poa\.br.*/
+score FROM_TUDONOTICIA 30
+
+header FROM_UN1QUEFOOTBALL From =~ /.*un1quefootball\.com\.br.*/
+score FROM_UN1QUEFOOTBALL 30
+
+header FROM_VIDASAUDAVELPRODUTOS From =~ /.*vidasaudavelprodutos\.com.*/
+score FROM_VIDASAUDAVELPRODUTOS 30
+
+header FROM_W7VEICULOS From =~ /.*w7veiculos\.com\.br.*/
+score FROM_W7VEICULOS 30
+
+header FROM_XAGUAT From =~ /.*xaguat\.com.*/
+score FROM_XAGUAT 30
+
+header FROM_IP From =~ /.*ip([0-9]{3}|[0-9]{2}|[0-9]{1})\.ip\-([0-9]{3}|[0-9]{2}|[0-9]{1})\-([0-9]{3}|[0-9]{2}|[0-9]{1})\-([0-9]{3}|[0-9]{2}|[0-9]{1})\.(us|net).*/
+score FROM_IP 30
