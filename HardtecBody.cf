@@ -135,13 +135,13 @@ rawbody BR_REMOVOTODAS /removo\stoda\se\squalquer\snegativacao\sque\stenha\sem\s
 score BR_REMOVOTODAS 30
 
 rawbody BR_SCRIPTTAG /(<!(--|[^>]*>).*){8}/
-score BR_SCRIPTTAG 200
+score BR_SCRIPTTAG 20
 
 rawbody BR_SCRIPTTAG2 /^.*[a-z]<![a-z]*[0-9]*>[a-z]/
-score BR_SCRIPTTAG2 200
+score BR_SCRIPTTAG2 20
 
 rawbody BR_SCRIPTTAG3 /^.*[a-z]<!--[a-z]*[0-9]*-->[a-z]/
-score BR_SCRIPTTAG3 200
+score BR_SCRIPTTAG3 20
 
 rawbody BR_IFRAME /iframe src\=cid/
 score BR_IFRAME 200

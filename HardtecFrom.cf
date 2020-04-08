@@ -393,3 +393,18 @@ score FROM_XAGUAT 30
 
 header FROM_IP From =~ /.*ip([0-9]{3}|[0-9]{2}|[0-9]{1})\.ip\-([0-9]{3}|[0-9]{2}|[0-9]{1})\-([0-9]{3}|[0-9]{2}|[0-9]{1})\-([0-9]{3}|[0-9]{2}|[0-9]{1})\.(us|net).*/
 score FROM_IP 30
+
+header FROM_WEBOFERTA From =~ /.*weboferta\.srv\.br.*/
+score FROM_WEBOFERTA 30
+
+header FROM_FERROARTE From =~ /.*ferroarteexaustores\.com\.br.*/
+score FROM_FERROARTE 30
+
+header FROM_BOLETIMSAUDE From =~ /.*boletim\-saude.*/
+score FROM_BOLETIMSAUDE 30
+
+header FROM_BOLETIMDIGITAL From =~ /.*boletimdigital\.c.m.*/
+score FROM_BOLETIMDIGITAL 30
+
+header FROM_CHUVAURBANA From =~ /.*chuvaurbana.*/
+score FROM_CHUVAURBANA 30
