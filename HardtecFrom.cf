@@ -319,9 +319,6 @@ score FROM_INFOSEMANAL 30
 header FROM_PLANOSAUDE From =~ /.*lifesul.*\.com\.br.*/
 score FROM_PLANOSAUDE 30
 
-header FROM_TOKIOMARINE From =~ /.*tokiomarine\.com\.br.*/
-score FROM_TOKIOMARINE 30
-
 header FROM_MALASDKK From =~ /.*malasdkk\.com.*/
 score FROM_MALASDKK 30
 
