@@ -437,7 +437,7 @@ score       BR_CORRE_SUBJ       6
 
 header      BR_PONTOS_SUBJ      Subject =~ /.*pontos?.*/i
 describe    BR_PONTOS_SUBJ      PONTOS
-score       BR_PONTOS_SUBJ      6
+score       BR_PONTOS_SUBJ      3
 
 header      BR_METAS_SUBJ       Subject =~ /.*metas?.*/i
 describe    BR_METAS_SUBJ       METAS
