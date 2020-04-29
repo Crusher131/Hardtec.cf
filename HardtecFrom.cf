@@ -361,9 +361,6 @@ score FROM_SIRDEX 30
 header FROM_SJWLPO From =~ /.*sjwlpo\.bhz\.br.*/
 score FROM_SJWLPO 30
 
-header FROM_STONE From =~ /.*stone\.com.*/
-score FROM_STONE 30
-
 header FROM_SVSAUDE From =~ /.*svsaude\.poa\.br.*/
 score FROM_SVSAUDE 30
 
