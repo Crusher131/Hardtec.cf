@@ -662,3 +662,7 @@ score       BR_BRADESCOSAUDE    60
 header      BR_SPCSERASA        Subject =~ /.*SPC.*SERASA.*/
 describe    BR_SPCSERASA        SPC SERASA
 score       BR_SPCSERASA        60
+
+header      BR_GROSSO_POTENTE   Subject =~ /Voc.*\smaior\,\smais\sgrosso\se\smuito\smais\spotente\.?/i
+describe    BR_GROSSO_POTENTE   PORRA mANO PARA COM ISSO CARAIO
+score       BR_GROSSO_POTENTE   200
