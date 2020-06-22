@@ -666,3 +666,43 @@ score       BR_SPCSERASA        60
 header      BR_GROSSO_POTENTE   Subject =~ /Voc.*\smaior\,\smais\sgrosso\se\smuito\smais\spotente\.?/i
 describe    BR_GROSSO_POTENTE   PORRA mANO PARA COM ISSO CARAIO
 score       BR_GROSSO_POTENTE   200
+
+header      BR_3_VIDAS          Subject =~ /a\spartir\sde\s3\svidas\./i
+describe    BR_3_VIDAS          a partir de 3 vidas
+score       BR_3_VIDAS          200
+
+header      BR_FOTINHOS         Subject =~ /.*iCloud.*\s\-\sNossas\sFotinhos.*/i
+describe    BR_FOTINHOS         iCloud:847 - Nossas Fotinhos 19/06/2020
+score       BR_FOTINHOS         200
+
+header      BR_PLANILHAS        Subject =~ /.*planilhas\sprontas\se\sedit(á|a)veis\sem\sexcel/i
+describe    BR_PLANILHAS        planilhas prontas e editáveis em Excel
+score       BR_PLANILHAS        200
+
+header      BR_CONHECE_OSVALDO  Subject =~ /voc(ê|e)\sconhece\s(a|o)\s.*\sda\srevenda\sde\ss(a|ã)o\spaulo.*/i
+describe    BR_CONHECE_OSVALDO  voce conhece o osvaldo da revenda de sao paulo
+score       BR_CONHECE_OSVALDO  200
+
+header      BR_MEMBRO_MAIOR     Subject =~ /seu\smembro\smaior\,\smais\sgrosso\se\sduro\scomo\suma\spedra/i
+describe    BR_MEMBRO_MAIOR     Seu membro maior, mais grosso e duro como uma pedra
+score       BR_MEMBRO_MAIOR     200
+
+header      BR_OS_3_MAIORES     Subject =~ /os\s3\smaiores\sseguros\sde.*/i
+describe    BR_OS_3_MAIORES     Os 3 maiores seguros de
+score       BR_OS_3_MAIORES     200
+
+header      BR_VEZES_SEGUIDAS   Subject =~ /.*mero\s.*\ssaiu\s.*\svezes\sseguidas\./i
+describe    BR_VEZES_SEGUIDAS   Ser? Coincid?ncia? O N?mero 13 saiu 7 vezes Seguidas.
+score       BR_VEZES_SEGUIDAS   200
+
+header      BR_UROLOGISTA       Subject =~ /UOL\:\surologista\spromete.*/i
+describe    BR_UROLOGISTA       UOL: Urologista promete
+score       BR_UROLOGISTA       200
+
+header      BR_CLAREAMENTO      Subject =~ /Clareamento\sDental/i
+describe    BR_CLAREAMENTO      Clareamento Dental
+score       BR_CLAREAMENTO      5
+
+header      BR_ARTISTAS         Subject =~ /Artistas/i
+describe    BR_ARTISTAS         Artistas
+score       BR_ARTISTAS         5
