@@ -405,3 +405,10 @@ score FROM_CHUVAURBANA 30
 
 header FROM_SPAM1 From =~ /.*\@(cabinetfiscal\.photos|sjvcrtd\.bhz\.br|rastreamentocorreiosbr\.cloud|pedidorastreado\.cloud|net.*titan\.co|appjuridico.*\.email|brjuridico.*\.email|centermarketing\.info|compraotimaja\.com\.br|rastreamentoviamail\.cloud|demandaonline.*\.email|dicaporemail\.poa\.br|digiofertas\.net\.br|gazetapr\.poa\.br|juridicocerto.*\.email|meganoticia\.poa\.br|m\.lincogix\.com|novidadesemanal\.poa\.br|ofertamidia\.com\.br|prinks\.com\.br|servidor52\.com\.br|shownaweb\.com\.br|soja\.we\.bs|spdicas\.poa\.br|top10nanet\.com\.brtopdica\.net\.br|vendastop10\.com\.br|vendersites\.com|vitoriacompleta\.com\.br|webtop10\.com\.br).*/
 score FROM_SPAM1 300
+
+header FROM_SPAM2 From =~ /.*@(portalbemsucedido\.com\.br|pendentecef06\.mywire\.org|rjflix\.co|sjbrstd\.bhz\.br|sjavrtd\.bhz\.br|presentevencedor\.com\.br|mywire\.org|acessoinadiplencia\.institute|entregadordecampanhas\.net|).*/
+score FROM_SPAM2 300
+
+header FROM_SPAM3 From =~ /.*@(brasilcomercio\.poa\.br|presentevencedor\.com\.br|bankit\.com\.br|portalsp\.poa\.br|ticketsforbusiness\.com\.br|tagmedia\.com\.br|mmcurso\.co|presentevencedor\.com\.br|setorweb.*\.co|viabr.*\.co|setorweb.*\.co|top10nanet\.com\.br|rjflix\.co|spflix\.co|viabr.*\.co|juridicos.*\.email).*/
+score FROM_SPAM3 300
+
