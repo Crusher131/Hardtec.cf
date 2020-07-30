@@ -411,3 +411,6 @@ score FROM_SPAM2 300
 
 header FROM_SPAM3 From =~ /.*@(\.*\.institute|brasilcomercio\.poa\.br|presentevencedor\.com\.br|bankit\.com\.br|portalsp\.poa\.br|ticketsforbusiness\.com\.br|tagmedia\.com\.br|mmcurso\.co|presentevencedor\.com\.br|setorweb.*\.co|viabr.*\.co|setorweb.*\.co|top10nanet\.com\.br|rjflix\.co|spflix\.co|viabr.*\.co|juridicos.*\.email).*/
 score FROM_SPAM3 300
+
+header FROM_SPAM4 From =~ /.*@(st\.jus\.br|menorcasa\.com|grupoexpansao\.com|ulianr\.com|genial\.rio\.br|melhordomercado\.live|redecerta\.com\.br|ccng\-inc\.com|aproveitetudo\.com\.br|seuemailchegou\.com\.br|packway\.com\.br|midialead\.com\.br|fenixpub\.com\.br|destaquesemanal\.rio\.br|sorteparavoce\.com\.br|bhz\.br).*/
+score FROM_SPAM4 300
