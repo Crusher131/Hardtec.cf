@@ -414,3 +414,6 @@ score FROM_SPAM3 300
 
 header FROM_SPAM4 From =~ /.*@(st\.jus\.br|menorcasa\.com|grupoexpansao\.com|ulianr\.com|genial\.rio\.br|melhordomercado\.live|redecerta\.com\.br|ccng\-inc\.com|aproveitetudo\.com\.br|seuemailchegou\.com\.br|packway\.com\.br|midialead\.com\.br|fenixpub\.com\.br|destaquesemanal\.rio\.br|sorteparavoce\.com\.br|bhz\.br).*/
 score FROM_SPAM4 300
+
+header FROM_PISHING From =~ /.*<.*@.*>.*<.*@.*>.*/
+score FROM_PISHING 300
