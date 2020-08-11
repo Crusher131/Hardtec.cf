@@ -130,7 +130,7 @@ score FROM_PROSTA 30
 header FROM_COTESAUDE From =~ /.*(cote|loca|desconto)saude\.co.*/
 score FROM_COTESAUDE 30
 
-header FROM_MELHORESCADEIRAS From =~ /.*(bielapar\.com\.br|bristol\.we\.bs|canaldeoleo\.com\.br|clameaqui\.we\.bs|desenhandosaude\.we\.bs|ereats\.com\.br|hsamaria\.com\.br|monefull\.we\.bs|stumpf\.we\.bs|supernardelli\.com\.br|terracloud\.we\.bs)/
+header FROM_MELHORESCADEIRAS From =~ /.*(bielapar\.com\.br|bristol\.we\.bs|canaldeoleo\.com\.br|clameaqui\.we\.bs|desenhandosaude\.we\.bs|ereats\.com\.br|monefull\.we\.bs|stumpf\.we\.bs|supernardelli\.com\.br|terracloud\.we\.bs)/
 score FROM_MELHORESCADEIRAS 30
 
 header FROM_SULAMERICA From =~ /.*(divulgacao\.actor|syspro\.inf\.br|ultra\.expert).*/
