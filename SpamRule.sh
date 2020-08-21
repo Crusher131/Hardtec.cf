@@ -120,9 +120,10 @@ Func.Cron(){
         echo "30 * * * * root /scripts/SpamRule.sh >/dev/null 2>&1" >> /etc/crontab
 
     fi
-        if  grep -F "30 20 * * * root /scripts/SpamRule.sh >/dev/null 2>&1" /etc/crontab; then
-        sed -i '/30 20 .* root \/scripts\/SpamRule.sh.*/d' /etc/crontab
-
+        if ! grep -F "30 20 * * * root /scripts/SpamRule.sh >/dev/null 2>&1" /etc/crontab; then
+            echo ""
+        else
+            sed -i '/30 20 .* root \/scripts\/SpamRule.sh.*/d' /etc/crontab
     fi
     if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
         cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
