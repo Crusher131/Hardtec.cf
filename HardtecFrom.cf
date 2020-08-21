@@ -421,5 +421,5 @@ score FROM_PISHING 300
 header FROM_SPAM5 From =~ /.*@(cursomm\.com|brjuridico.*\.email|juridicocerto.*\.email|comprovaum\.co|demandaonline.*\.email|brasiloportunidade\.com\.br|demandaonline.*\.email|alertanovidade\.poa\.br|demandaonline.*\.email|atendimento.*\.adebager\.io|demandaonline.*\.email|intergenius\.com\.br|.*diretorioemails\.institute|queroacertarja\.com\.br|digitaloferta\.com\.br)/
 score FROM_SPAM5 300
 
-header FROM_SPAM6 From =~ /.*rastreamentopedidos\.cloud.*/
+header FROM_SPAM6 From =~ /.*(rastreamentopedidos\.cloud|enviodepedidos\.cloud).*/
 score FROM_SPAM6 300
