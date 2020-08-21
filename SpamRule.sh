@@ -118,6 +118,11 @@ Func.Cron(){
     wget $paramwget https://raw.githubusercontent.com/Crusher131/Hardtec.cf/master/SpamRule.sh
     if  ! grep -F "30 * * * * root /scripts/SpamRule.sh >/dev/null 2>&1" /etc/crontab; then
         echo "30 * * * * root /scripts/SpamRule.sh >/dev/null 2>&1" >> /etc/crontab
+
+    fi
+        if  grep -F "30 20 * * * root /scripts/SpamRule.sh >/dev/null 2>&1" /etc/crontab; then
+        sed -i '/30 20 .* root \/scripts\/SpamRule.sh.*/d' /etc/crontab
+
     fi
     if  ! diff --brief /tmp/SpamRule.sh /scripts/SpamRule.sh >/dev/null; then
         cp -f /tmp/SpamRule.sh /scripts/SpamRule.sh
