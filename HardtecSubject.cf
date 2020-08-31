@@ -706,3 +706,19 @@ score       BR_CLAREAMENTO      5
 header      BR_ARTISTAS         Subject =~ /Artistas/i
 describe    BR_ARTISTAS         Artistas
 score       BR_ARTISTAS         5
+
+header      BR_MAIOR_OPERADORA  Subject =~ /a\smaior\soperadora\sdo\spais\./i
+describe    BR_MAIOR_OPERADORA  a maior operadora do pais
+score       BR_MAIOR_OPERADORA  300
+
+header      BR_LUNETA           Subject =~  /luneta com.*/i
+score       BR_LUNETA           300
+
+header      BR_TRES_VIDAS       Subject =~  /a\spartir\sde\s.*vidas.*/i
+score       BR_TRES_VIDAS       300
+
+header      BR_CALÇADO          Subject =~  /seu_cal.*ado.*pela.*metade.*do.*/i
+score       BR_CALÇADO          300
+
+header      BR_LANTERNA_FORTE   Subject =~  /.*lanterna.*forte.*/i
+score       BR_LANTERNA_FORTE   300

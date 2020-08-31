@@ -421,5 +421,8 @@ score FROM_PISHING 300
 header FROM_SPAM5 From =~ /.*@(cursomm\.com|brjuridico.*\.email|juridicocerto.*\.email|comprovaum\.co|demandaonline.*\.email|brasiloportunidade\.com\.br|demandaonline.*\.email|alertanovidade\.poa\.br|demandaonline.*\.email|atendimento.*\.adebager\.io|demandaonline.*\.email|intergenius\.com\.br|.*diretorioemails\.institute|queroacertarja\.com\.br|digitaloferta\.com\.br)/
 score FROM_SPAM5 300
 
-header FROM_SPAM6 From =~ /.*(rastreamentopedidos\.cloud|enviodepedidos\.cloud).*/
+header FROM_SPAM6 From =~ /.*(rastreamentopedidos\.cloud|enviodepedidos\.cloud|administrativobest\.cloud).*/
 score FROM_SPAM6 300
+
+header FROM_SPAM7 From =~ /.*(combatemidia\.we\.bs|theeagle\.we\.bs|acheioqpreciso\.we\.bs|bally\.com\.br|bankit\.com\.br|bristol\.we\.bs|bubka\.com\.br|clameaqui\.com\.de|coibach\.com\.br|desenhandosaude\.we\.bs|fiyounet\.we\.bs|forblack\.we\.bs|forpumpp\.we\.bs|forpump\.we\.bs|gelfull\.com\.de|geradordeleads\.we\.bs|inbound\-reply\.mareabomba\.we\.bs|intergenius\.com\.br|invisible\.we\.bs|manutencaosaude\.we\.bs|mastepower\.we\.bs|midiah.*colher\.we\.bs|mmleadz\.com\.br|monefull\.com\.de|movtit\.we\.bs|nabuscamilagre\.we\.bs|net2phone\.com\.de|opered\.com\.br|packway\.com\.br|pedidodigital\.we\.bs|pegaabomba\.we\.bs|pmebr\.com\.br|prinks\.com\.br|procurandopreco\.we\.bs|reindexa\.com\.br|resgate\.we\.bs|sao\.we\.bs|seg\-saudepme\.com\.br|shownaweb\.com\.br|skfwind\.we\.bs|stormside\.com\.br|stumpf\.we\.bs|summerbox\.com\.br|telefonicassaude\.we\.bs|terracloud\.we\.bs|tixell\.com\.br|top10emvendas\.com\.br|top10nanet\.com\.br|valvuladesaude\.we\.bs|vendassaudeonline\.we\.bs|vendastop.*\.com\.br|webtop.*\.com\.br).*/i
+score FROM_SPAM7    300
